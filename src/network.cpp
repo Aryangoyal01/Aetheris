@@ -3,32 +3,29 @@
 #include <windows.h>
 #include "network.h"
 #include <iostream>
+#include <cstring>
+#include <cstdlib>
 
-// File-local socket variables (hidden from the rest of the engine)
 static SOCKET serverSocket = INVALID_SOCKET;
 static bool networkReady = false;
+static uint32_t sequenceCounter = 0;
 
-namespace EngineNetwork
-{
+namespace EngineNetwork {
 
-    bool Initialize(int port)
-    {
+    bool Initialize(int port) {
         WSADATA wsaData;
-        if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0)
-        {
+        if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
             std::cerr << "[Network] WSAStartup failed.\n";
             return false;
         }
 
-        serverSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP); // Assuming UDP for real-time tracking
-        if (serverSocket == INVALID_SOCKET)
-        {
+        serverSocket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+        if (serverSocket == INVALID_SOCKET) {
             std::cerr << "[Network] Socket creation failed.\n";
             WSACleanup();
             return false;
         }
 
-        // Set socket to non-blocking mode so it won't freeze your Raylib frame rate
         u_long mode = 1;
         ioctlsocket(serverSocket, FIONBIO, &mode);
 
@@ -37,8 +34,7 @@ namespace EngineNetwork
         serverAddr.sin_port = htons(port);
         serverAddr.sin_addr.s_addr = INADDR_ANY;
 
-        if (bind(serverSocket, (sockaddr *)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR)
-        {
+        if (bind(serverSocket, (sockaddr*)&serverAddr, sizeof(serverAddr)) == SOCKET_ERROR) {
             std::cerr << "[Network] Bind failed.\n";
             closesocket(serverSocket);
             WSACleanup();
@@ -50,44 +46,124 @@ namespace EngineNetwork
         return true;
     }
 
-  
-    TrackingData PollTrackingData()
-    {
+    static bool ParseTrackingCSV(const char* data, TrackingData& out) {
+        int handPresent = 0, pinchVal = 0;
+        float px, py, nx, ny;
+        if (sscanf(data, "%d,%f,%f,%f,%f,%d", &handPresent, &px, &py, &nx, &ny, &pinchVal) == 6) {
+            out.hasNewPacket = true;
+            out.handDetected = (handPresent == 1);
+            out.x = px;
+            out.y = py;
+            out.normX = nx;
+            out.normY = ny;
+            out.isPinching = (pinchVal == 1);
+            return true;
+        }
+        return false;
+    }
+
+    static float ParseJSONFloat(const char* json, const char* key, float defaultVal) {
+        char search[64];
+        snprintf(search, sizeof(search), "\"%s\"", key);
+        const char* pos = strstr(json, search);
+        if (!pos) return defaultVal;
+        pos += strlen(search);
+        while (*pos == ' ' || *pos == ':' || *pos == '\t') pos++;
+        return (float)atof(pos);
+    }
+
+    static int ParseJSONInt(const char* json, const char* key, int defaultVal) {
+        char search[64];
+        snprintf(search, sizeof(search), "\"%s\"", key);
+        const char* pos = strstr(json, search);
+        if (!pos) return defaultVal;
+        pos += strlen(search);
+        while (*pos == ' ' || *pos == ':' || *pos == '\t') pos++;
+        if (*pos == '"') {
+            pos++;
+            if (strncmp(pos, "SINGULARITY", 11) == 0) return 0;
+            if (strncmp(pos, "REPELLER", 8) == 0) return 1;
+            if (strncmp(pos, "PULSAR", 6) == 0) return 2;
+            return defaultVal;
+        }
+        return atoi(pos);
+    }
+
+    static bool ParseAIPacket(const char* data, AIPayload& out) {
+        if (data[0] != '{') return false;
+
+        out.hasUpdate = true;
+        out.gravity = ParseJSONFloat(data, "gravity", out.gravity);
+        out.friction = ParseJSONFloat(data, "friction", out.friction);
+        out.elasticity = ParseJSONFloat(data, "elasticity", out.elasticity);
+        out.timeScale = ParseJSONFloat(data, "time_scale", out.timeScale);
+        out.spawnType = ParseJSONInt(data, "spawn_particles", out.spawnType);
+        return true;
+    }
+
+    TrackingData PollTrackingData() {
         TrackingData data;
-        data.hasNewPacket = false; 
+        data.hasNewPacket = false;
         if (!networkReady) return data;
 
-        char buffer[256];
+        char buffer[1024];
         sockaddr_in clientAddr;
         int clientLength = sizeof(clientAddr);
-        int bytesReceived;
 
-        // DRAIN THE BUFFER: Keep reading until there are no packets left.
-        // This ensures 'data' always contains the absolute latest frame.
-        while ((bytesReceived = recvfrom(serverSocket, buffer, sizeof(buffer) - 1, 0, (sockaddr *)&clientAddr, &clientLength)) > 0)
-        {
+        while (true) {
+            int bytesReceived = recvfrom(serverSocket, buffer, sizeof(buffer) - 1, 0,
+                                        (sockaddr*)&clientAddr, &clientLength);
+            if (bytesReceived <= 0) break;
             buffer[bytesReceived] = '\0';
-            int handPresent = 0, pinchVal = 0;
-            float px, py, nx, ny; 
 
-            if (sscanf(buffer, "%d,%f,%f,%f,%f,%d", &handPresent, &px, &py, &nx, &ny, &pinchVal) == 6)
-            {
-                data.hasNewPacket = true; 
-                data.handDetected = (handPresent == 1);
-                data.x = px;
-                data.y = py;
-                data.normX = nx;
-                data.normY = ny;
-                data.isPinching = (pinchVal == 1);
+            if (bytesReceived >= (int)sizeof(PacketHeader)) {
+                PacketHeader header;
+                memcpy(&header, buffer, sizeof(PacketHeader));
+
+                if (header.version == 1) {
+                    const char* payload = buffer + sizeof(PacketHeader);
+
+                    if (header.type == PACKET_TRACKING) {
+                        ParseTrackingCSV(payload, data);
+                    }
+                }
+            } else {
+                ParseTrackingCSV(buffer, data);
             }
         }
         return data;
     }
 
-    void Shutdown()
-    {
-        if (serverSocket != INVALID_SOCKET)
-        {
+    AIPayload PollAIPayload() {
+        AIPayload payload;
+        payload.hasUpdate = false;
+        if (!networkReady) return payload;
+
+        char buffer[1024];
+        sockaddr_in clientAddr;
+        int clientLength = sizeof(clientAddr);
+
+        while (true) {
+            int bytesReceived = recvfrom(serverSocket, buffer, sizeof(buffer) - 1, 0,
+                                        (sockaddr*)&clientAddr, &clientLength);
+            if (bytesReceived <= 0) break;
+            buffer[bytesReceived] = '\0';
+
+            if (bytesReceived >= (int)sizeof(PacketHeader)) {
+                PacketHeader header;
+                memcpy(&header, buffer, sizeof(PacketHeader));
+
+                if (header.version == 1 && header.type == PACKET_AI_CONFIG) {
+                    const char* jsonData = buffer + sizeof(PacketHeader);
+                    ParseAIPacket(jsonData, payload);
+                }
+            }
+        }
+        return payload;
+    }
+
+    void Shutdown() {
+        if (serverSocket != INVALID_SOCKET) {
             closesocket(serverSocket);
         }
         WSACleanup();

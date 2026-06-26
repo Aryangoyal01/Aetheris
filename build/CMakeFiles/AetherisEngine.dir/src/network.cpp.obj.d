@@ -219,6 +219,11 @@ CMakeFiles/AetherisEngine.dir/src/network.cpp.obj: \
  C:/msys64/ucrt64/include/psdk_inc/_wsa_errnos.h \
  C:/msys64/ucrt64/include/qos.h \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\network.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstdint \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstring \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
  C:/msys64/ucrt64/include/c++/15.2.0/iostream \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/15.2.0/ostream \
@@ -239,7 +244,6 @@ CMakeFiles/AetherisEngine.dir/src/network.cpp.obj: \
  C:/msys64/ucrt64/include/sec_api/wchar_s.h \
  C:/msys64/ucrt64/include/c++/15.2.0/exception \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception.h \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_ptr.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/exception_defines.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/cxxabi_init_exception.h \

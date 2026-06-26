@@ -1,45 +1,44 @@
-#ifndef NETWORK_H
-#define NETWORK_H
+#pragma once
+
+#include <cstdint>
+#include <cstring>
 
 namespace EngineNetwork {
 
-    /**
-     * @brief Contains the telemetry state received from the Python tracking pipeline.
-     */
-    struct TrackingData {
-        // Raw pixel coordinates from the camera matrix
-        float x = 0.0f;
-        float y = 0.0f;
-
-        // Normalized coordinates (0.0f to 1.0f) for engine-agnostic scaling
-        float normX = 0.0f;
-        float normY = 0.0f;
-
-        // Status flags
-        bool isPinching = false;   // Gesture state
-        bool handDetected = false; // Visibility state
-        bool hasNewPacket = false; // Frame-specific signal to update logic
+    enum PacketType : uint8_t {
+        PACKET_TRACKING = 0x01,
+        PACKET_AI_CONFIG = 0x02,
+        PACKET_SPAWN = 0x03,
     };
 
-    // --- API FUNCTIONS ---
+    struct PacketHeader {
+        uint8_t version;
+        uint8_t type;
+        uint16_t size;
+        uint32_t sequence;
+    };
 
-    /**
-     * @brief Initializes the network socket.
-     * @param port The port to listen on (e.g., 8080).
-     * @return True if successful.
-     */
+    struct TrackingData {
+        float x = 0.0f;
+        float y = 0.0f;
+        float normX = 0.0f;
+        float normY = 0.0f;
+        bool isPinching = false;
+        bool handDetected = false;
+        bool hasNewPacket = false;
+    };
+
+    struct AIPayload {
+        bool hasUpdate = false;
+        float gravity = 9.81f;
+        float friction = 0.15f;
+        float elasticity = 0.75f;
+        float timeScale = 1.0f;
+        int spawnType = -1;
+    };
+
     bool Initialize(int port);
-
-    /**
-     * @brief Non-blocking poll for new tracking data.
-     * @return The latest TrackingData snapshot.
-     */
     TrackingData PollTrackingData();
-
-    /**
-     * @brief Closes sockets and cleans up networking resources.
-     */
+    AIPayload PollAIPayload();
     void Shutdown();
 }
-
-#endif // NETWORK_H

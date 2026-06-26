@@ -176,6 +176,126 @@ src/network.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/network.cpp.s
 .PHONY : src/network.cpp.s
 
+src/renderer/compute_pipeline.obj: src/renderer/compute_pipeline.cpp.obj
+.PHONY : src/renderer/compute_pipeline.obj
+
+# target to build an object file
+src/renderer/compute_pipeline.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj
+.PHONY : src/renderer/compute_pipeline.cpp.obj
+
+src/renderer/compute_pipeline.i: src/renderer/compute_pipeline.cpp.i
+.PHONY : src/renderer/compute_pipeline.i
+
+# target to preprocess a source file
+src/renderer/compute_pipeline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.i
+.PHONY : src/renderer/compute_pipeline.cpp.i
+
+src/renderer/compute_pipeline.s: src/renderer/compute_pipeline.cpp.s
+.PHONY : src/renderer/compute_pipeline.s
+
+# target to generate assembly for a file
+src/renderer/compute_pipeline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.s
+.PHONY : src/renderer/compute_pipeline.cpp.s
+
+src/renderer/gl_helpers.obj: src/renderer/gl_helpers.cpp.obj
+.PHONY : src/renderer/gl_helpers.obj
+
+# target to build an object file
+src/renderer/gl_helpers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj
+.PHONY : src/renderer/gl_helpers.cpp.obj
+
+src/renderer/gl_helpers.i: src/renderer/gl_helpers.cpp.i
+.PHONY : src/renderer/gl_helpers.i
+
+# target to preprocess a source file
+src/renderer/gl_helpers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.i
+.PHONY : src/renderer/gl_helpers.cpp.i
+
+src/renderer/gl_helpers.s: src/renderer/gl_helpers.cpp.s
+.PHONY : src/renderer/gl_helpers.s
+
+# target to generate assembly for a file
+src/renderer/gl_helpers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.s
+.PHONY : src/renderer/gl_helpers.cpp.s
+
+src/renderer/gpu_allocator.obj: src/renderer/gpu_allocator.cpp.obj
+.PHONY : src/renderer/gpu_allocator.obj
+
+# target to build an object file
+src/renderer/gpu_allocator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj
+.PHONY : src/renderer/gpu_allocator.cpp.obj
+
+src/renderer/gpu_allocator.i: src/renderer/gpu_allocator.cpp.i
+.PHONY : src/renderer/gpu_allocator.i
+
+# target to preprocess a source file
+src/renderer/gpu_allocator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.i
+.PHONY : src/renderer/gpu_allocator.cpp.i
+
+src/renderer/gpu_allocator.s: src/renderer/gpu_allocator.cpp.s
+.PHONY : src/renderer/gpu_allocator.s
+
+# target to generate assembly for a file
+src/renderer/gpu_allocator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.s
+.PHONY : src/renderer/gpu_allocator.cpp.s
+
+src/renderer/particle_renderer.obj: src/renderer/particle_renderer.cpp.obj
+.PHONY : src/renderer/particle_renderer.obj
+
+# target to build an object file
+src/renderer/particle_renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj
+.PHONY : src/renderer/particle_renderer.cpp.obj
+
+src/renderer/particle_renderer.i: src/renderer/particle_renderer.cpp.i
+.PHONY : src/renderer/particle_renderer.i
+
+# target to preprocess a source file
+src/renderer/particle_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.i
+.PHONY : src/renderer/particle_renderer.cpp.i
+
+src/renderer/particle_renderer.s: src/renderer/particle_renderer.cpp.s
+.PHONY : src/renderer/particle_renderer.s
+
+# target to generate assembly for a file
+src/renderer/particle_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.s
+.PHONY : src/renderer/particle_renderer.cpp.s
+
+src/renderer/renderer.obj: src/renderer/renderer.cpp.obj
+.PHONY : src/renderer/renderer.obj
+
+# target to build an object file
+src/renderer/renderer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj
+.PHONY : src/renderer/renderer.cpp.obj
+
+src/renderer/renderer.i: src/renderer/renderer.cpp.i
+.PHONY : src/renderer/renderer.i
+
+# target to preprocess a source file
+src/renderer/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.i
+.PHONY : src/renderer/renderer.cpp.i
+
+src/renderer/renderer.s: src/renderer/renderer.cpp.s
+.PHONY : src/renderer/renderer.s
+
+# target to generate assembly for a file
+src/renderer/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.s
+.PHONY : src/renderer/renderer.cpp.s
+
 src/ui.obj: src/ui.cpp.obj
 .PHONY : src/ui.obj
 
@@ -215,6 +335,21 @@ help:
 	@echo ... src/network.obj
 	@echo ... src/network.i
 	@echo ... src/network.s
+	@echo ... src/renderer/compute_pipeline.obj
+	@echo ... src/renderer/compute_pipeline.i
+	@echo ... src/renderer/compute_pipeline.s
+	@echo ... src/renderer/gl_helpers.obj
+	@echo ... src/renderer/gl_helpers.i
+	@echo ... src/renderer/gl_helpers.s
+	@echo ... src/renderer/gpu_allocator.obj
+	@echo ... src/renderer/gpu_allocator.i
+	@echo ... src/renderer/gpu_allocator.s
+	@echo ... src/renderer/particle_renderer.obj
+	@echo ... src/renderer/particle_renderer.i
+	@echo ... src/renderer/particle_renderer.s
+	@echo ... src/renderer/renderer.obj
+	@echo ... src/renderer/renderer.i
+	@echo ... src/renderer/renderer.s
 	@echo ... src/ui.obj
 	@echo ... src/ui.i
 	@echo ... src/ui.s

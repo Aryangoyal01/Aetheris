@@ -1,7 +1,7 @@
 CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj: \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui.cpp \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui.h \
- C:/msys64/ucrt64/include/raylib.h \
+ C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raylib.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/ucrt64/include/stdarg.h \
  C:/msys64/ucrt64/include/_mingw_stdarg.h \
@@ -9,20 +9,25 @@ CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj: \
  C:/msys64/ucrt64/include/_mingw_mac.h \
  C:/msys64/ucrt64/include/_mingw_secapi.h \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\settings.h \
- C:/msys64/ucrt64/include/raymath.h \
- C:/msys64/ucrt64/include/c++/15.2.0/math.h \
- C:/msys64/ucrt64/include/c++/15.2.0/cmath \
- C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cstdint \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
  C:/msys64/ucrt64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
  C:/msys64/ucrt64/include/c++/15.2.0/pstl/pstl_config.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/msys64/ucrt64/include/stdint.h C:/msys64/ucrt64/include/crtdefs.h \
+ C:/msys64/ucrt64/include/corecrt.h \
+ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/msys64/ucrt64/include/stddef.h \
+ C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raymath.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/math.h \
+ C:/msys64/ucrt64/include/c++/15.2.0/cmath \
+ C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/cpp_type_traits.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/version.h \
  C:/msys64/ucrt64/include/c++/15.2.0/type_traits \
  C:/msys64/ucrt64/include/c++/15.2.0/ext/type_traits.h \
- C:/msys64/ucrt64/include/math.h C:/msys64/ucrt64/include/crtdefs.h \
- C:/msys64/ucrt64/include/corecrt.h \
+ C:/msys64/ucrt64/include/math.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/std_abs.h \
  C:/msys64/ucrt64/include/stdlib.h \
  C:/msys64/ucrt64/include/corecrt_wstdlib.h \
