@@ -4,8 +4,13 @@
 
 namespace UILayout {
 
-constexpr int PANEL_WIDTH = 450;
-constexpr int MARGIN = 40;
+constexpr int TOOLBAR_HEIGHT = 40;
+constexpr int LEFT_SIDEBAR_WIDTH = 220;
+constexpr int RIGHT_INSPECTOR_WIDTH = 280;
+constexpr int BOTTOM_DOCK_HEIGHT = 200;
+
+constexpr int MARGIN = 12;
+constexpr int INNER_MARGIN = 16;
 
 constexpr int TITLE_Y = 40;
 constexpr int SUBTITLE_Y = 70;
@@ -60,6 +65,16 @@ struct TabLayout {
 struct EntityButtonLayout {
     LayoutRect rect;
 };
+
+struct EditorRegions {
+    LayoutRect toolbar;
+    LayoutRect leftSidebar;
+    LayoutRect viewport;
+    LayoutRect rightInspector;
+    LayoutRect bottomDock;
+};
+
+EditorRegions ComputeEditorRegions(int screenWidth, int screenHeight);
 
 LayoutRect GetPanelRect();
 LayoutRect GetTabRect(int tabIndex);

@@ -26,4 +26,12 @@ void DrawLabel(float x, float y, const char* text, int fontSize, Color color);
 
 void DrawStatusIndicator(float x, float y, const char* text, bool active);
 
+bool DrawToolbarButton(float x, float y, float width, float height, const char* text, const InteractionState& state);
+
+bool DrawSidebarTab(float x, float y, float width, float height, const char* text, bool active, const InteractionState& state);
+
+void DrawSectionHeader(float x, float y, float width, const char* text);
+
+void DrawRegionBackground(const UILayout::LayoutRect& rect, Color bgColor);
+
 }

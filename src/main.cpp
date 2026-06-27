@@ -3,6 +3,7 @@
 #include "raymath.h"
 #include "settings.h"
 #include "ui.h"
+#include "ui_layout.h"
 #include "network.h"
 #include "renderer/renderer.h"
 #include "renderer/gl_helpers.h"
@@ -133,7 +134,14 @@ int main() {
 
         EngineUI::HandleSpatialInteractivity(settings, smoothedHandPos, lastKnownPinch, activeHandVisible);
 
-        if (triggerSpawnThisFrame && smoothedHandPos.x > EngineUI::PANEL_WIDTH) {
+        auto editorRegions = UILayout::ComputeEditorRegions(GetScreenWidth(), GetScreenHeight());
+        float viewportLeft = editorRegions.viewport.x;
+        float viewportRight = editorRegions.viewport.x + editorRegions.viewport.width;
+        float viewportTop = editorRegions.viewport.y;
+        float viewportBottom = editorRegions.viewport.y + editorRegions.viewport.height;
+
+        if (triggerSpawnThisFrame && smoothedHandPos.x >= viewportLeft && smoothedHandPos.x <= viewportRight &&
+            smoothedHandPos.y >= viewportTop && smoothedHandPos.y <= viewportBottom) {
             Ray ray = GetScreenToWorldRay(smoothedHandPos, camera);
 
             if (ray.direction.y < -0.001f) {
@@ -164,7 +172,8 @@ int main() {
         g_renderer.FlushSpawnQueue();
 
         float handWorldX = 0.0f, handWorldY = 0.0f, handWorldZ = 0.0f;
-        if (smoothedHandPos.x > EngineUI::PANEL_WIDTH) {
+        if (smoothedHandPos.x >= viewportLeft && smoothedHandPos.x <= viewportRight &&
+            smoothedHandPos.y >= viewportTop && smoothedHandPos.y <= viewportBottom) {
             Ray ray = GetScreenToWorldRay(smoothedHandPos, camera);
             if (ray.direction.y < -0.001f) {
                 float dist = -ray.position.y / ray.direction.y;
@@ -194,9 +203,8 @@ int main() {
 
         EndMode3D();
 
-        EngineUI::DrawDashboard(settings, smoothedHandPos, activeHandVisible, (trackingTimeout > 0), isCurrentlyInteracting);
-
-        DrawText(TextFormat("GPU Particles: %u | FPS: %d", g_renderer.GetAllocator().GetAliveCount(), GetFPS()), EngineUI::PANEL_WIDTH + 20, 10, 16, GREEN);
+        EngineUI::DrawEditor(settings, smoothedHandPos, activeHandVisible, (trackingTimeout > 0), isCurrentlyInteracting,
+                             g_renderer.GetAllocator().GetAliveCount(), GetFPS());
 
         EndDrawing();
     }

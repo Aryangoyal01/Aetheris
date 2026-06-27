@@ -6,9 +6,21 @@ constexpr uint32_t WORKGROUP_SIZE = 256;
 constexpr uint32_t MAX_PARTICLES = 500000;
 constexpr uint32_t DEFAULT_ACTIVE_PARTICLES = 50000;
 
-enum UITab {
-    TAB_PARAMETERS,
-    TAB_ENTITIES
+enum SidebarTab : int {
+    SIDEBAR_PHYSICS = 0,
+    SIDEBAR_PARTICLES,
+    SIDEBAR_ENVIRONMENT,
+    SIDEBAR_PERFORMANCE,
+    SIDEBAR_AI,
+    SIDEBAR_SCENE,
+    SIDEBAR_COUNT
+};
+
+enum BottomDockTab : int {
+    DOCK_CONSOLE = 0,
+    DOCK_LOGS,
+    DOCK_PERFORMANCE,
+    DOCK_COUNT
 };
 
 enum ParticleType {
@@ -27,7 +39,10 @@ struct GPUParticle {
 };
 
 struct EngineSettings {
-    UITab activeTab = TAB_PARAMETERS;
+    SidebarTab activeSidebarTab = SIDEBAR_PHYSICS;
+    BottomDockTab activeBottomDockTab = DOCK_CONSOLE;
+    bool sidebarVisible = true;
+    bool dockVisible = true;
     int activeObjectType = 0;
 
     float gravityStrength = 9.81f;

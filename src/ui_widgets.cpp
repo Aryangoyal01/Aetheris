@@ -47,7 +47,7 @@ void DrawSlider(const UILayout::SliderLayout& layout, const char* label, float v
     float pct = (value - minVal) / (maxVal - minVal);
     Color accent = state.hovered ? GetColor(0x00F0FFFF) : GetColor(0x00D2FFFF);
 
-    DrawText(TextFormat("%s: %0.2f", label, value), (int)layout.labelRect.x, (int)layout.labelRect.y,
+    DrawText(TextFormat("%s  %.2f", label, value), (int)layout.labelRect.x, (int)layout.labelRect.y,
              UILayout::SLIDER_LABEL_SIZE, state.hovered ? RAYWHITE : Fade(RAYWHITE, 0.7f));
     DrawRectangle((int)layout.trackRect.x, (int)layout.trackRect.y, (int)layout.trackRect.width, (int)layout.trackRect.height,
                   GetColor(0x202035FF));
@@ -83,7 +83,47 @@ void DrawLabel(float x, float y, const char* text, int fontSize, Color color) {
 void DrawStatusIndicator(float x, float y, const char* text, bool active) {
     Color col = active ? GetColor(0x00FF88FF) : GetColor(0x88888888);
     DrawCircle((int)x + 4, (int)y + 6, 4.0f, col);
-    DrawText(text, (int)x + 14, (int)y, 12, col);
+    DrawText(text, (int)x + 14, (int)y, 11, col);
+}
+
+bool DrawToolbarButton(float x, float y, float width, float height, const char* text, const InteractionState& state) {
+    Rectangle rect = { x, y, width, height };
+
+    Color bgCol = state.hovered ? Fade(RAYWHITE, 0.1f) : BLANK;
+    Color textCol = state.hovered ? RAYWHITE : Fade(RAYWHITE, 0.6f);
+
+    DrawRectangleRounded(rect, 0.3f, 6, bgCol);
+    DrawText(text, (int)x + 8, (int)y + (int)(height / 2) - 6, 12, textCol);
+
+    return state.justClicked;
+}
+
+bool DrawSidebarTab(float x, float y, float width, float height, const char* text, bool active, const InteractionState& state) {
+    Rectangle rect = { x, y, width, height };
+
+    Color accent = GetColor(0x00D2FFFF);
+    Color bgCol = active ? Fade(accent, 0.15f) : (state.hovered ? Fade(RAYWHITE, 0.05f) : BLANK);
+    Color textCol = active ? accent : (state.hovered ? RAYWHITE : Fade(RAYWHITE, 0.5f));
+    Color borderCol = active ? accent : BLANK;
+
+    DrawRectangleRounded(rect, 0.2f, 6, bgCol);
+    DrawRectangleRoundedLines(rect, 0.2f, 6, borderCol);
+
+    int textWidth = MeasureText(text, 11);
+    int textX = (int)x + ((int)width - textWidth) / 2;
+    int textY = (int)y + ((int)height / 2) - 5;
+    DrawText(text, textX, textY, 11, textCol);
+
+    return state.justClicked;
+}
+
+void DrawSectionHeader(float x, float y, float width, const char* text) {
+    DrawText(text, (int)x, (int)y, 11, GetColor(0x00D2FF88));
+    DrawLine((int)x, (int)y + 16, (int)(x + width), (int)y + 16, Fade(RAYWHITE, 0.1f));
+}
+
+void DrawRegionBackground(const UILayout::LayoutRect& rect, Color bgColor) {
+    DrawRectangle((int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height, bgColor);
 }
 
 }

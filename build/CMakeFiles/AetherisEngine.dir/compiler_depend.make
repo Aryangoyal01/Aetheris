@@ -144,7 +144,8 @@ CMakeFiles/AetherisEngine.dir/src/main.cpp.obj: C:/Users/aryan/OneDrive/Desktop/
   C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/particle_renderer.h \
   C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/renderer.h \
   C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/settings.h \
-  C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui.h
+  C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui.h \
+  C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_layout.h
 
 CMakeFiles/AetherisEngine.dir/src/network.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/network.cpp \
   C:/msys64/ucrt64/include/_bsd_types.h \
@@ -1986,6 +1987,10 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h:
 
 C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui.h:
 
+C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86gprintrin.h:
+
+C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_layout.h:
+
 C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/network.cpp:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxvnniint8intrin.h:
@@ -2399,10 +2404,6 @@ C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqintrin.h:
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wbnoinvdintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
-
-C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_layout.h:
-
-C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86gprintrin.h:
 
 C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xopintrin.h:
 
