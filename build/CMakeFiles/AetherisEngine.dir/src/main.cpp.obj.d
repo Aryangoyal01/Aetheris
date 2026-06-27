@@ -1,14 +1,13 @@
 CMakeFiles/AetherisEngine.dir/src/main.cpp.obj: \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\main.cpp \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raylib.h \
+ C:/msys64/ucrt64/include/raylib.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/ucrt64/include/stdarg.h \
  C:/msys64/ucrt64/include/_mingw_stdarg.h \
  C:/msys64/ucrt64/include/vadefs.h C:/msys64/ucrt64/include/_mingw.h \
  C:/msys64/ucrt64/include/_mingw_mac.h \
- C:/msys64/ucrt64/include/_mingw_secapi.h \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/rlgl.h \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raymath.h \
+ C:/msys64/ucrt64/include/_mingw_secapi.h C:/msys64/ucrt64/include/rlgl.h \
+ C:/msys64/ucrt64/include/raymath.h \
  C:/msys64/ucrt64/include/c++/15.2.0/math.h \
  C:/msys64/ucrt64/include/c++/15.2.0/cmath \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \

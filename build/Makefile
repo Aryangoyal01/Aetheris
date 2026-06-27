@@ -320,6 +320,54 @@ src/ui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui.cpp.s
 .PHONY : src/ui.cpp.s
 
+src/ui_layout.obj: src/ui_layout.cpp.obj
+.PHONY : src/ui_layout.obj
+
+# target to build an object file
+src/ui_layout.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj
+.PHONY : src/ui_layout.cpp.obj
+
+src/ui_layout.i: src/ui_layout.cpp.i
+.PHONY : src/ui_layout.i
+
+# target to preprocess a source file
+src/ui_layout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.i
+.PHONY : src/ui_layout.cpp.i
+
+src/ui_layout.s: src/ui_layout.cpp.s
+.PHONY : src/ui_layout.s
+
+# target to generate assembly for a file
+src/ui_layout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.s
+.PHONY : src/ui_layout.cpp.s
+
+src/ui_widgets.obj: src/ui_widgets.cpp.obj
+.PHONY : src/ui_widgets.obj
+
+# target to build an object file
+src/ui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj
+.PHONY : src/ui_widgets.cpp.obj
+
+src/ui_widgets.i: src/ui_widgets.cpp.i
+.PHONY : src/ui_widgets.i
+
+# target to preprocess a source file
+src/ui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.i
+.PHONY : src/ui_widgets.cpp.i
+
+src/ui_widgets.s: src/ui_widgets.cpp.s
+.PHONY : src/ui_widgets.s
+
+# target to generate assembly for a file
+src/ui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\AetherisEngine.dir\build.make CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.s
+.PHONY : src/ui_widgets.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -353,6 +401,12 @@ help:
 	@echo ... src/ui.obj
 	@echo ... src/ui.i
 	@echo ... src/ui.s
+	@echo ... src/ui_layout.obj
+	@echo ... src/ui_layout.i
+	@echo ... src/ui_layout.s
+	@echo ... src/ui_widgets.obj
+	@echo ... src/ui_widgets.i
+	@echo ... src/ui_widgets.s
 .PHONY : help
 
 

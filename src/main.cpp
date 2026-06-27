@@ -69,26 +69,21 @@ int main() {
         EngineNetwork::TrackingData tracking = EngineNetwork::PollTrackingData();
         EngineNetwork::AIPayload aiPayload = EngineNetwork::PollAIPayload();
 
-        static float targetGravity = 9.81f;
-        static float targetFriction = 0.15f;
-        static float targetElasticity = 0.75f;
-        static float targetTimeScale = 1.0f;
-
         if (aiPayload.hasUpdate) {
-            targetGravity = aiPayload.gravity;
-            targetFriction = aiPayload.friction;
-            targetElasticity = aiPayload.elasticity;
-            targetTimeScale = aiPayload.timeScale;
+            settings.targetGravity = aiPayload.gravity;
+            settings.targetFriction = aiPayload.friction;
+            settings.targetElasticity = aiPayload.elasticity;
+            settings.targetTimeScale = aiPayload.timeScale;
             if (aiPayload.spawnType >= 0 && aiPayload.spawnType <= 2) {
                 settings.activeObjectType = aiPayload.spawnType;
             }
         }
 
         float lerpRate = 1.0f - expf(-3.0f * dt);
-        settings.gravityStrength = Lerp(settings.gravityStrength, targetGravity, lerpRate);
-        settings.frictionCoefficient = Lerp(settings.frictionCoefficient, targetFriction, lerpRate);
-        settings.elasticityValue = Lerp(settings.elasticityValue, targetElasticity, lerpRate);
-        settings.timeScale = Lerp(settings.timeScale, targetTimeScale, lerpRate);
+        settings.gravityStrength = Lerp(settings.gravityStrength, settings.targetGravity, lerpRate);
+        settings.frictionCoefficient = Lerp(settings.frictionCoefficient, settings.targetFriction, lerpRate);
+        settings.elasticityValue = Lerp(settings.elasticityValue, settings.targetElasticity, lerpRate);
+        settings.timeScale = Lerp(settings.timeScale, settings.targetTimeScale, lerpRate);
 
         if (tracking.hasNewPacket) {
             trackingTimeout = TIMEOUT_MAX;

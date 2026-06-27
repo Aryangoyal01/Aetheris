@@ -104,7 +104,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/tuple \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\gpu_allocator.h \
  C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/settings.h \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raylib.h \
+ C:/msys64/ucrt64/include/raylib.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/ucrt64/include/stdarg.h \
  C:/msys64/ucrt64/include/_mingw_stdarg.h \
@@ -113,7 +113,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_vector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/vector.tcc \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/rlgl.h \
+ C:/msys64/ucrt64/include/rlgl.h \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\gl_helpers.h \
  C:/msys64/ucrt64/include/c++/15.2.0/fstream \
  C:/msys64/ucrt64/include/c++/15.2.0/istream \

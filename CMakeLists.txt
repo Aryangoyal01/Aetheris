@@ -3,18 +3,17 @@ project(AetherisEngine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(RAYLIB_LOCAL "${CMAKE_SOURCE_DIR}/raylib_src")
-
 include_directories(include)
 include_directories(src)
-include_directories(${RAYLIB_LOCAL}/src)
 
-link_directories(${RAYLIB_LOCAL}/build/raylib)
+add_compile_definitions(GRAPHICS_API_OPENGL_43)
 
 set(SOURCES
     src/main.cpp
     src/network.cpp
     src/ui.cpp
+    src/ui_layout.cpp
+    src/ui_widgets.cpp
     src/renderer/renderer.cpp
     src/renderer/gpu_allocator.cpp
     src/renderer/compute_pipeline.cpp
@@ -23,13 +22,4 @@ set(SOURCES
 )
 
 add_executable(AetherisEngine ${SOURCES})
-
-target_compile_definitions(AetherisEngine PRIVATE GRAPHICS_API_OPENGL_43)
-
-target_link_libraries(AetherisEngine raylib ws2_32 opengl32)
-
-add_custom_command(TARGET AetherisEngine POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory
-        "${CMAKE_SOURCE_DIR}/src/shaders"
-        "$<TARGET_FILE_DIR:AetherisEngine>/src/shaders"
-)
+target_link_libraries(AetherisEngine PRIVATE raylib glfw3 ws2_32 opengl32)

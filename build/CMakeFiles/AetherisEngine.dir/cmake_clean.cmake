@@ -18,6 +18,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj.d"
   "CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj"
   "CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj.d"
+  "CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj"
+  "CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj.d"
+  "CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj"
+  "CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj.d"
   "libAetherisEngine.dll.a"
 )
 

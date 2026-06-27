@@ -116,11 +116,41 @@ CMakeFiles/AetherisEngine.dir/src/ui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AetherisEngine.dir/src/ui.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui.cpp -o CMakeFiles\AetherisEngine.dir\src\ui.cpp.s
 
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj: CMakeFiles/AetherisEngine.dir/flags.make
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_layout.cpp
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\ui_layout.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\ui_layout.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_layout.cpp
+
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_layout.cpp > CMakeFiles\AetherisEngine.dir\src\ui_layout.cpp.i
+
+CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_layout.cpp -o CMakeFiles\AetherisEngine.dir\src\ui_layout.cpp.s
+
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj: CMakeFiles/AetherisEngine.dir/flags.make
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_widgets.cpp
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\ui_widgets.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\ui_widgets.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_widgets.cpp
+
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_widgets.cpp > CMakeFiles\AetherisEngine.dir\src\ui_widgets.cpp.i
+
+CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_widgets.cpp -o CMakeFiles\AetherisEngine.dir\src\ui_widgets.cpp.s
+
 CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj: CMakeFiles/AetherisEngine.dir/flags.make
 CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
 CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/renderer.cpp
 CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\renderer\renderer.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\renderer\renderer.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\renderer.cpp
 
 CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.i: cmake_force
@@ -135,7 +165,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj: CMakeFiles/Aet
 CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
 CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/gpu_allocator.cpp
 CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\renderer\gpu_allocator.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\renderer\gpu_allocator.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\gpu_allocator.cpp
 
 CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.i: cmake_force
@@ -150,7 +180,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: CMakeFiles/
 CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
 CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/compute_pipeline.cpp
 CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\renderer\compute_pipeline.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\renderer\compute_pipeline.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\compute_pipeline.cpp
 
 CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.i: cmake_force
@@ -165,7 +195,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj: CMakeFiles
 CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
 CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/particle_renderer.cpp
 CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\renderer\particle_renderer.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\renderer\particle_renderer.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\particle_renderer.cpp
 
 CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.i: cmake_force
@@ -180,7 +210,7 @@ CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj: CMakeFiles/Aether
 CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj: CMakeFiles/AetherisEngine.dir/includes_CXX.rsp
 CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj: C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/gl_helpers.cpp
 CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj: CMakeFiles/AetherisEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.obj -MF CMakeFiles\AetherisEngine.dir\src\renderer\gl_helpers.cpp.obj.d -o CMakeFiles\AetherisEngine.dir\src\renderer\gl_helpers.cpp.obj -c C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\renderer\gl_helpers.cpp
 
 CMakeFiles/AetherisEngine.dir/src/renderer/gl_helpers.cpp.i: cmake_force
@@ -196,6 +226,8 @@ AetherisEngine_OBJECTS = \
 "CMakeFiles/AetherisEngine.dir/src/main.cpp.obj" \
 "CMakeFiles/AetherisEngine.dir/src/network.cpp.obj" \
 "CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj" \
+"CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj" \
+"CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj" \
 "CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj" \
 "CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj" \
 "CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj" \
@@ -208,6 +240,8 @@ AetherisEngine_EXTERNAL_OBJECTS =
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/main.cpp.obj
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/network.cpp.obj
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj
+AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj
+AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/renderer/gpu_allocator.cpp.obj
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/src/renderer/compute_pipeline.cpp.obj
@@ -217,9 +251,8 @@ AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/build.make
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/linkLibs.rsp
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/objects1.rsp
 AetherisEngine.exe: CMakeFiles/AetherisEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable AetherisEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\aryan\OneDrive\Desktop\Projects\engine\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable AetherisEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\AetherisEngine.dir\link.txt --verbose=$(VERBOSE)
-	"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/shaders C:/Users/aryan/OneDrive/Desktop/Projects/engine/build/src/shaders
 
 # Rule to build all files generated by this target.
 CMakeFiles/AetherisEngine.dir/build: AetherisEngine.exe

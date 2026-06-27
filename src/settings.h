@@ -37,6 +37,11 @@ struct EngineSettings {
     float interactionRadius = 15.0f;
     float timeScale = 1.0f;
 
+    float targetGravity = 9.81f;
+    float targetFriction = 0.15f;
+    float targetElasticity = 0.75f;
+    float targetTimeScale = 1.0f;
+
     uint32_t activeParticleCount = 50000;
 };
 

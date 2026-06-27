@@ -8,7 +8,6 @@ class EngineUI {
 public:
     static const int PANEL_WIDTH = 450;
 
-    // Added 'isPinching' to the Draw function for reactive visuals
     static void DrawDashboard(EngineSettings& settings, Vector2 handPos, bool isHandVisible, bool isNetworkOnline, bool isPinching);
 
     static void HandleSpatialInteractivity(EngineSettings& settings, Vector2 handPos, bool isPinching, bool isHandVisible);

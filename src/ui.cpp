@@ -1,91 +1,81 @@
 #include "ui.h"
+#include "ui_layout.h"
+#include "ui_widgets.h"
 #include "raylib.h"
 #include "raymath.h"
-
-const int MARGIN = 40;
 
 void EngineUI::DrawDashboard(EngineSettings& settings, Vector2 handPos, bool isHandVisible, bool isNetworkOnline, bool isPinching) {
     Vector2 activePos = isHandVisible ? handPos : GetMousePosition();
 
-    // 1. Sleek "Obsidian" Panel
-    DrawRectangleGradientEx(Rectangle{0, 0, (float)EngineUI::PANEL_WIDTH, (float)GetScreenHeight()}, 
-        GetColor(0x0A0A12FA), GetColor(0x05050AFA), GetColor(0x05050AFA), GetColor(0x0A0A12FA));
-    DrawRectangle(EngineUI::PANEL_WIDTH - 2, 0, 2, GetScreenHeight(), GetColor(0x00D2FF44));
+    auto panelRect = UILayout::GetPanelRect();
+    UIWidgets::DrawPanelBackground(panelRect);
+    UIWidgets::DrawPanelBorder(panelRect);
 
-    // 2. Branding
-    DrawText("AETHERIS // MATRIX", MARGIN, 40, 24, GetColor(0xE0F0FFFF));
-    DrawText("SPATIAL TELEMETRY LINK", MARGIN, 70, 10, GetColor(0x00D2FF88));
+    UIWidgets::DrawLabel((float)UILayout::MARGIN, (float)UILayout::TITLE_Y,
+                         "AETHERIS // MATRIX", 24, GetColor(0xE0F0FFFF));
+    UIWidgets::DrawLabel((float)UILayout::MARGIN, (float)UILayout::SUBTITLE_Y,
+                         "SPATIAL TELEMETRY LINK", 10, GetColor(0x00D2FF88));
 
-    // Helper: UI Hover Detection
-    auto IsHovered = [&](Rectangle rect) {
-        return CheckCollisionPointRec(activePos, rect);
-    };
+    auto tab0 = UILayout::GetTabRect(0);
+    auto tab1 = UILayout::GetTabRect(1);
+    UILayout::TabLayout tabLayout0 = { tab0 };
+    UILayout::TabLayout tabLayout1 = { tab1 };
 
-    // 3. Reactive Tab Selection
-    auto DrawTab = [&](int x, int y, const char* text, bool active) {
-        Rectangle tabRect = {(float)x, (float)y, 160, 45};
-        bool hovered = IsHovered(tabRect);
-        
-        Color baseCol = active ? GetColor(0x00D2FFFF) : (hovered ? RAYWHITE : Fade(RAYWHITE, 0.3f));
-        float expand = (hovered && isPinching) ? -2.0f : 0.0f; // Shrink click effect
-        
-        Rectangle drawRect = {tabRect.x - expand, tabRect.y - expand, tabRect.width + (expand*2), tabRect.height + (expand*2)};
-        
-        DrawRectangleRounded(drawRect, 0.2f, 8, active ? Fade(baseCol, 0.15f) : (hovered ? Fade(baseCol, 0.05f) : BLANK));
-        DrawRectangleRoundedLines(drawRect, 0.2f, 8, baseCol);
-        DrawText(text, x + 35, y + 16, 14, baseCol);
-    };
+    auto tabState0 = UIWidgets::GetInteractionState({tab0.x, tab0.y, tab0.width, tab0.height}, activePos, false, false);
+    auto tabState1 = UIWidgets::GetInteractionState({tab1.x, tab1.y, tab1.width, tab1.height}, activePos, false, false);
 
-    DrawTab(MARGIN, 110, "PHYSICS", settings.activeTab == TAB_PARAMETERS);
-    DrawTab(MARGIN + 180, 110, "ENTITIES", settings.activeTab == TAB_ENTITIES);
-    DrawLine(MARGIN, 175, EngineUI::PANEL_WIDTH - MARGIN, 175, Fade(RAYWHITE, 0.1f));
+    UIWidgets::DrawTab(tabLayout0, "PHYSICS", settings.activeTab == TAB_PARAMETERS, tabState0, isPinching);
+    UIWidgets::DrawTab(tabLayout1, "ENTITIES", settings.activeTab == TAB_ENTITIES, tabState1, isPinching);
 
-    // 4. Content Area
+    auto divider = UILayout::GetDividerRect();
+    DrawLine((int)divider.x, (int)divider.y, (int)(divider.x + divider.width), (int)divider.y, Fade(RAYWHITE, 0.1f));
+
     if (settings.activeTab == TAB_PARAMETERS) {
-        DrawText("SYSTEM DYNAMICS", MARGIN, 200, 12, GetColor(0x00D2FF88));
+        UIWidgets::DrawLabel((float)UILayout::MARGIN, (float)UILayout::SECTION_HEADER_Y,
+                             "SYSTEM DYNAMICS", UILayout::SECTION_HEADER_SIZE, GetColor(0x00D2FF88));
 
-        auto DrawSlider = [&](int y, const char* label, float value, float min, float max) {
-            float pct = (value - min) / (max - min);
-            Rectangle sliderRect = {(float)MARGIN, (float)y + 15, EngineUI::PANEL_WIDTH - (MARGIN * 2.0f), 20};
-            bool hovered = IsHovered(sliderRect);
-            Color accent = hovered ? GetColor(0x00F0FFFF) : GetColor(0x00D2FFFF);
-
-            DrawText(TextFormat("%s: %0.2f", label, value), MARGIN, y, 13, hovered ? RAYWHITE : Fade(RAYWHITE, 0.7f));
-            DrawRectangle(MARGIN, y + 25, EngineUI::PANEL_WIDTH - (MARGIN * 2), 6, GetColor(0x202035FF)); 
-            DrawRectangle(MARGIN, y + 25, (int)((EngineUI::PANEL_WIDTH - (MARGIN * 2)) * pct), 6, accent); 
-            DrawCircle(MARGIN + (int)((EngineUI::PANEL_WIDTH - (MARGIN * 2)) * pct), y + 28, hovered ? 10.0f : 8.0f, accent); 
-        };
-
-        DrawSlider(240, "GRAVITY", settings.gravityStrength, -20.0f, 20.0f);
-        DrawSlider(310, "FRICTION", settings.frictionCoefficient, 0.0f, 1.0f);
-        DrawSlider(380, "ELASTICITY", settings.elasticityValue, 0.0f, 1.0f);
-
-    } else if (settings.activeTab == TAB_ENTITIES) {
-        DrawText("MATTER SPECIFICATION", MARGIN, 200, 12, GetColor(0x00D2FF88));
-        const char* labels[] = { "SINGULARITY WELL", "RECURSIVE REPELLER", "ORBITAL PULSAR" };
-        Color colors[] = { SKYBLUE, PURPLE, GOLD };
+        const char* sliderLabels[] = { "GRAVITY", "FRICTION", "ELASTICITY" };
+        float sliderMins[] = { -20.0f, 0.0f, 0.0f };
+        float sliderMaxs[] = { 20.0f, 1.0f, 1.0f };
 
         for (int i = 0; i < 3; i++) {
-            int y = 240 + (i * 65);
-            Rectangle btnRect = {(float)MARGIN, (float)y, EngineUI::PANEL_WIDTH - (MARGIN*2.0f), 50};
-            bool hovered = IsHovered(btnRect);
-            bool selected = (settings.activeObjectType == i);
-            
-            float expand = (hovered && isPinching) ? -2.0f : 0.0f;
-            Rectangle drawRect = {btnRect.x - expand, btnRect.y - expand, btnRect.width + (expand*2), btnRect.height + (expand*2)};
+            auto sliderLayout = UILayout::GetSliderLayout(i);
+            auto state = UIWidgets::GetInteractionState(
+                {sliderLayout.hitRect.x, sliderLayout.hitRect.y, sliderLayout.hitRect.width, sliderLayout.hitRect.height},
+                activePos, IsMouseButtonDown(MOUSE_BUTTON_LEFT), IsMouseButtonPressed(MOUSE_BUTTON_LEFT));
 
-            DrawRectangleRounded(drawRect, 0.2f, 8, selected ? Fade(colors[i], 0.25f) : (hovered ? Fade(RAYWHITE, 0.1f) : Fade(RAYWHITE, 0.02f)));
-            DrawRectangleRoundedLines(drawRect, 0.2f, 8, selected ? colors[i] : (hovered ? RAYWHITE : BLANK));
-            DrawText(labels[i], MARGIN + 20, y + 18, 14, selected ? colors[i] : (hovered ? RAYWHITE : Fade(RAYWHITE, 0.5f)));
+            float currentVal = (i == 0) ? settings.gravityStrength :
+                               (i == 1) ? settings.frictionCoefficient :
+                                          settings.elasticityValue;
+            UIWidgets::DrawSlider(sliderLayout, sliderLabels[i], currentVal,
+                                  sliderMins[i], sliderMaxs[i], state);
+        }
+
+    } else if (settings.activeTab == TAB_ENTITIES) {
+        UIWidgets::DrawLabel((float)UILayout::MARGIN, (float)UILayout::SECTION_HEADER_Y,
+                             "MATTER SPECIFICATION", UILayout::SECTION_HEADER_SIZE, GetColor(0x00D2FF88));
+
+        const char* entityLabels[] = { "SINGULARITY WELL", "RECURSIVE REPELLER", "ORBITAL PULSAR" };
+        Color entityColors[] = { SKYBLUE, PURPLE, GOLD };
+
+        for (int i = 0; i < 3; i++) {
+            auto btnLayout = UILayout::GetEntityButtonLayout(i);
+            auto state = UIWidgets::GetInteractionState(
+                {btnLayout.rect.x, btnLayout.rect.y, btnLayout.rect.width, btnLayout.rect.height},
+                activePos, IsMouseButtonDown(MOUSE_BUTTON_LEFT), IsMouseButtonPressed(MOUSE_BUTTON_LEFT));
+
+            if (UIWidgets::DrawEntityButton(btnLayout, entityLabels[i], entityColors[i],
+                                            settings.activeObjectType == i, state, isPinching)) {
+                settings.activeObjectType = i;
+            }
         }
     }
 
-    // 5. Dynamic Reticle (Cursor)
     if (activePos.x > 0) {
         Color cursorCol = isPinching ? GetColor(0x00FF88FF) : GetColor(0x00D2FFFF);
         float innerRad = isPinching ? 6.0f : 4.0f;
-        float outerRad = isPinching ? 10.0f : 16.0f; // Snaps inward on pinch
-        
+        float outerRad = isPinching ? 10.0f : 16.0f;
+
         DrawCircleV(activePos, innerRad, cursorCol);
         DrawCircleLines((int)activePos.x, (int)activePos.y, outerRad, Fade(cursorCol, 0.8f));
         if (isPinching) DrawCircleLines((int)activePos.x, (int)activePos.y, outerRad + 4.0f, Fade(cursorCol, 0.3f));
@@ -94,32 +84,59 @@ void EngineUI::DrawDashboard(EngineSettings& settings, Vector2 handPos, bool isH
 
 void EngineUI::HandleSpatialInteractivity(EngineSettings& settings, Vector2 handPos, bool isPinching, bool isHandVisible) {
     Vector2 activePos = isHandVisible ? handPos : GetMousePosition();
-    bool activeGrip = isHandVisible ? isPinching : IsMouseButtonDown(MOUSE_BUTTON_LEFT);
     bool activeTriggered = isHandVisible ? isPinching : IsMouseButtonPressed(MOUSE_BUTTON_LEFT);
 
     static bool wasTriggered = false;
     bool justClicked = (activeTriggered && !wasTriggered);
     wasTriggered = activeTriggered;
 
-    if (justClicked && activePos.y >= 110 && activePos.y <= 155) {
-        if (activePos.x >= MARGIN && activePos.x <= MARGIN + 160) settings.activeTab = TAB_PARAMETERS;
-        if (activePos.x >= MARGIN + 180 && activePos.x <= MARGIN + 340) settings.activeTab = TAB_ENTITIES;
+    auto tab0 = UILayout::GetTabRect(0);
+    auto tab1 = UILayout::GetTabRect(1);
+
+    if (justClicked) {
+        if (CheckCollisionPointRec(activePos, {tab0.x, tab0.y, tab0.width, tab0.height})) {
+            settings.activeTab = TAB_PARAMETERS;
+        }
+        if (CheckCollisionPointRec(activePos, {tab1.x, tab1.y, tab1.width, tab1.height})) {
+            settings.activeTab = TAB_ENTITIES;
+        }
     }
 
     if (activePos.x > 0 && activePos.x < EngineUI::PANEL_WIDTH) {
-        if (settings.activeTab == TAB_PARAMETERS && activeGrip) {
-            float relativeX = activePos.x - MARGIN;
-            float sliderWidth = EngineUI::PANEL_WIDTH - (MARGIN * 2);
-            float pct = Clamp(relativeX / sliderWidth, 0.0f, 1.0f);
+        if (settings.activeTab == TAB_PARAMETERS) {
+            bool activeGrip = isHandVisible ? isPinching : IsMouseButtonDown(MOUSE_BUTTON_LEFT);
 
-            if (activePos.y >= 235 && activePos.y <= 275) settings.gravityStrength = Lerp(-20.0f, 20.0f, pct);
-            if (activePos.y >= 305 && activePos.y <= 345) settings.frictionCoefficient = pct;
-            if (activePos.y >= 375 && activePos.y <= 415) settings.elasticityValue = pct;
-        } 
-        else if (settings.activeTab == TAB_ENTITIES && justClicked) {
             for (int i = 0; i < 3; i++) {
-                int itemY = 240 + (i * 65);
-                if (activePos.y >= itemY && activePos.y < itemY + 50) settings.activeObjectType = i;
+                auto sliderLayout = UILayout::GetSliderLayout(i);
+                Rectangle hitRect = {sliderLayout.hitRect.x, sliderLayout.hitRect.y, sliderLayout.hitRect.width, sliderLayout.hitRect.height};
+
+                if (activeGrip && CheckCollisionPointRec(activePos, hitRect)) {
+                    float relativeX = activePos.x - sliderLayout.trackRect.x;
+                    float sliderWidth = sliderLayout.trackRect.width;
+                    float pct = Clamp(relativeX / sliderWidth, 0.0f, 1.0f);
+
+                    if (i == 0) {
+                        settings.gravityStrength = Lerp(-20.0f, 20.0f, pct);
+                        settings.targetGravity = settings.gravityStrength;
+                    }
+                    else if (i == 1) {
+                        settings.frictionCoefficient = pct;
+                        settings.targetFriction = settings.frictionCoefficient;
+                    }
+                    else if (i == 2) {
+                        settings.elasticityValue = pct;
+                        settings.targetElasticity = settings.elasticityValue;
+                    }
+                }
+            }
+        } else if (settings.activeTab == TAB_ENTITIES && justClicked) {
+            for (int i = 0; i < 3; i++) {
+                auto btnLayout = UILayout::GetEntityButtonLayout(i);
+                Rectangle hitRect = {btnLayout.rect.x, btnLayout.rect.y, btnLayout.rect.width, btnLayout.rect.height};
+
+                if (CheckCollisionPointRec(activePos, hitRect)) {
+                    settings.activeObjectType = i;
+                }
             }
         }
     }

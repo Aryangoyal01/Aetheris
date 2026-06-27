@@ -1,7 +1,7 @@
 CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj: \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui.cpp \
  C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui.h \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raylib.h \
+ C:/msys64/ucrt64/include/raylib.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/ucrt64/include/stdarg.h \
  C:/msys64/ucrt64/include/_mingw_stdarg.h \
@@ -19,7 +19,9 @@ CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj: \
  C:/msys64/ucrt64/include/corecrt.h \
  C:/msys64/ucrt64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
  C:/msys64/ucrt64/include/stddef.h \
- C:/Users/aryan/OneDrive/Desktop/Projects/engine/raylib_src/src/raymath.h \
+ C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_layout.h \
+ C:\Users\aryan\OneDrive\Desktop\Projects\engine\src\ui_widgets.h \
+ C:/msys64/ucrt64/include/raymath.h \
  C:/msys64/ucrt64/include/c++/15.2.0/math.h \
  C:/msys64/ucrt64/include/c++/15.2.0/cmath \
  C:/msys64/ucrt64/include/c++/15.2.0/bits/requires_hosted.h \

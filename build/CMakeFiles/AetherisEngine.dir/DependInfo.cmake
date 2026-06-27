@@ -16,6 +16,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/particle_renderer.cpp" "CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj" "gcc" "CMakeFiles/AetherisEngine.dir/src/renderer/particle_renderer.cpp.obj.d"
   "C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/renderer/renderer.cpp" "CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj" "gcc" "CMakeFiles/AetherisEngine.dir/src/renderer/renderer.cpp.obj.d"
   "C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui.cpp" "CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj" "gcc" "CMakeFiles/AetherisEngine.dir/src/ui.cpp.obj.d"
+  "C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_layout.cpp" "CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj" "gcc" "CMakeFiles/AetherisEngine.dir/src/ui_layout.cpp.obj.d"
+  "C:/Users/aryan/OneDrive/Desktop/Projects/engine/src/ui_widgets.cpp" "CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj" "gcc" "CMakeFiles/AetherisEngine.dir/src/ui_widgets.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
