@@ -1,7 +1,37 @@
-build/
-venv/
-.vscode/
+/build/
+/.vscode/
+/.vs/
+
+# Visual Studio
+*.sln
+*.slnx
+*.suo
+*.user
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# CMake
+CMakeCache.txt
 CMakeFiles/
+CMakeScripts/
+*.cmake
+Makefile
+cmake_install.cmake
+
+# Build Artifacts
 *.exe
 *.obj
+*.o
+*.pdb
+*.dir/
+*.lib
 *.dll
+*.a
+*.so
+
+# Logs and Temporary files
+*.log
+benchmark.txt
+compile_commands.json
+.cache/

@@ -1,0 +1,26 @@
+[INFO] ========================================
+[INFO]                 AETHERIS                
+[INFO] ========================================
+[INFO] --- ENGINE ---
+[INFO] Build: Debug [MSVC x64]
+[INFO] --- STARTUP ---
+[INFO] --- GRAPHICS ---
+[INFO] OpenGL Version: 4.3.0 Core Profile Context 24.10.38.05.240923
+[INFO] GLSL Version: 4.60
+[INFO] GPU Vendor: ATI Technologies Inc.
+[INFO] GPU Renderer: AMD Radeon 780M Graphics
+[INFO] --- COMPUTE ---
+[INFO] Compute shader compiled successfully: assets/shaders/compute/simulate.comp
+[INFO] Compute shader linked successfully: assets/shaders/compute/simulate.comp
+[INFO] GPU Simulation Enabled
+[INFO] SSBO Created
+[INFO] Buffer Size: 1000000 bytes
+[INFO] Particle Capacity: 25000
+[INFO] Upload System Ready
+[INFO] Graphics shader compiled and linked successfully: assets/shaders/graphics/particle.vert / assets/shaders/graphics/particle.frag
+[INFO] GPU Renderer Initialized
+[INFO] Instanced Quad Renderer Ready
+[INFO] Direct GPU Rendering Enabled
+[INFO] Aetheris initialized successfully
+[INFO] --- RUNTIME ---
+[INFO] Entering main loop
