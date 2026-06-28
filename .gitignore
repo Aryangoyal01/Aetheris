@@ -35,3 +35,4 @@ cmake_install.cmake
 benchmark.txt
 compile_commands.json
 .cache/
+imgui.ini

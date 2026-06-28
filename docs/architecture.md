@@ -1,381 +1,218 @@
-# AETHERIS — ARCHITECTURE
+# AETHERIS — Architecture
 
-> This document defines the architectural rules of Aetheris.
+> This document defines the high-level architecture of Aetheris.
 >
-> Every subsystem, feature, and future milestone must conform to the principles described here.
+> It describes how the engine is organized, how subsystems interact, and the architectural principles that guide future development.
 >
-> Architecture is considered stable unless explicitly redesigned.
+> Detailed implementation of individual systems is documented separately in `systems.md`.
 
 ---
 
-# Architecture Philosophy
+# Overview
 
-Aetheris is built using a modular subsystem architecture.
+Aetheris is a modular, GPU-oriented scientific simulation engine with an integrated editor.
 
-Each subsystem has:
+The project is organized into independent subsystems that communicate through well-defined interfaces. Each subsystem owns a single responsibility and can evolve without tightly coupling to the rest of the engine.
 
-* one responsibility
-* clear ownership
-* minimal dependencies
-* deterministic behavior
-
-Subsystems communicate through well-defined interfaces.
-
-No subsystem should perform another subsystem's responsibility.
+The architecture is designed for long-term scalability, allowing new features to be integrated without requiring major redesigns.
 
 ---
 
-# High-Level Architecture
+# Core Architecture
 
 ```text
-                           Application
-                                │
- ┌──────────────┬───────────────┼──────────────┬──────────────┐
- │              │               │              │              │
-Input   SimulationSettings   Viewport    SpawnSystem   ISimulation
- │              │               │              │              │
- └──────────────┴───────────────┴──────────────┴──────────────┘
-                                │
-                                ▼
-                              World
-                                │
-                         ParticleSystem
-                                │
-                                ▼
-                            Renderer
-                                │
-                                ▼
-                              Screen
+                  Application
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+      Editor        Engine         Platform
+                        │
+      ┌─────────────────┼─────────────────┐
+      │                 │                 │
+   Input            Simulation       Renderer
+      │                 │                 │
+      └──────────────┬──┴─────────────────┘
+                     │
+                  World
 ```
 
-The Application owns all major subsystems.
+The **Application** coordinates subsystem lifetime but contains no simulation or rendering logic.
 
-It is responsible only for orchestration.
+The **World** represents the shared state of the engine.
+
+Subsystems interact through the World or explicit interfaces rather than directly depending on one another.
 
 ---
 
-# Subsystem Responsibilities
+# Subsystems
 
 ## Application
 
-Responsible for:
+Coordinates the engine lifecycle.
 
-* initialization
-* shutdown
-* update order
-* subsystem lifetime
-* configuration
-* main loop
+Responsibilities:
 
-Application should never implement simulation logic.
+* Initialization
+* Main loop
+* Shutdown
+* Configuration
+* Subsystem ownership
+
+---
+
+## Editor
+
+Provides the user interface and editing environment.
+
+Responsibilities:
+
+* Dockspace
+* Viewport
+* Inspector
+* Console
+* Editor tools
+* User interaction
+
+The Editor never performs simulation or rendering itself.
 
 ---
 
 ## Input
 
-Responsible for:
+Collects user input from supported devices.
 
-* keyboard
-* mouse
-* future controllers
-* future hand tracking input
+Current:
 
-Input only reports state.
+* Keyboard
+* Mouse
 
-Input never modifies the world.
+Planned:
 
----
+* Game controllers
+* Hand tracking
+* Voice input
 
-## Spawn System
-
-Responsible for:
-
-* converting user intent into particle creation
-* spawn timing
-* spawn limits
-* SpawnRequest processing
-
-SpawnSystem never performs simulation.
+Input only reports state and never modifies the simulation directly.
 
 ---
 
 ## World
 
-The World is the single source of truth.
+The World is the central data model.
 
-World owns:
+It stores the current simulation state and acts as the single source of truth shared across the engine.
 
-* particles
-* future entities
-* simulation state
-
-Only Simulation modifies World state.
-
-Other systems read the World.
+Future systems such as entities, assets, and scene data will also be managed here.
 
 ---
 
 ## Simulation
 
-Simulation updates the World.
+Updates the World according to the configured physics model.
 
-Responsibilities include:
+Its responsibility is to compute state changes only.
 
-* gravity
-* collisions
-* lifetime
-* future constraints
-* force fields
-* procedural behaviors
-
-Simulation never performs rendering.
+It never performs rendering or UI operations.
 
 ---
 
 ## Renderer
 
-Renderer visualizes the World.
+Visualizes the current World state.
 
-Renderer performs:
+Responsibilities include:
 
-* grid rendering
-* sandbox rendering
-* particle rendering
-* future debug rendering
-* future editor overlays
+* Particle rendering
+* Grid rendering
+* Debug visualization
+* Editor overlays
 
-Renderer never modifies World state.
-
----
-
-## Viewport
-
-Viewport converts between:
-
-Screen
-
-↓
-
-World
-
-and
-
-World
-
-↓
-
-Screen
-
-Viewport owns:
-
-* zoom
-* origin
-* projection
-
-Viewport never affects simulation.
+The Renderer never modifies simulation data.
 
 ---
 
-# Data Ownership
+# Ownership Rules
 
-Application owns subsystem lifetime.
+Each subsystem has explicit ownership.
 
-World owns simulation data.
+| Subsystem   | Owns                   |
+| ----------- | ---------------------- |
+| Application | Subsystem lifetime     |
+| Editor      | User interface         |
+| Input       | Input state            |
+| World       | Shared simulation data |
+| Simulation  | World updates          |
+| Renderer    | Visualization          |
 
-Simulation owns particle updates.
+Ownership must remain unique.
 
-Renderer owns visualization only.
-
-Viewport owns projection state.
-
-Input owns input state.
-
-Ownership must never overlap.
+No subsystem should duplicate another subsystem's responsibility.
 
 ---
 
-# Dependency Rules
+# Dependency Principles
+
+Dependencies always flow in one direction.
 
 Allowed:
 
-Application
-
-↓
-
-All subsystems
-
-Input
-
-↓
-
-None
-
-SpawnSystem
-
-↓
-
-World
-
-SimulationSettings
-
-Simulation
-
-↓
-
-World
-
-SimulationSettings
-
-Renderer
-
-↓
-
-World
-
-Viewport
-
-Viewport
-
-↓
-
-Core Math
+* Application → All subsystems
+* Editor → Engine interfaces
+* Simulation → World
+* Renderer → World
+* Input → Events
 
 Forbidden:
 
-Renderer → Simulation
+* Renderer → Simulation
+* Simulation → Renderer
+* Renderer → Input
+* World → Renderer
+* Circular dependencies
 
-Simulation → Renderer
-
-Input → Renderer
-
-Input → Simulation
-
-Renderer → Input
-
-World → Renderer
-
-World → Simulation
-
-Circular dependencies of any kind.
+Subsystems communicate through interfaces rather than direct coupling whenever practical.
 
 ---
 
-# Update Order
+# Design Principles
 
-Every frame:
+The architecture follows several core principles:
 
-```text
-Input
+* Single Responsibility
+* Explicit Ownership
+* Clear Dependency Direction
+* Modular Design
+* Separation of Engine and Editor
+* Data-Oriented Growth
+* GPU-Oriented Future Design
 
-↓
-
-Spawn System
-
-↓
-
-Simulation
-
-↓
-
-Renderer
-
-↓
-
-Present Frame
-```
-
-This order must remain stable.
+These principles take precedence over short-term implementation convenience.
 
 ---
 
-# GPU Transition
+# Extensibility
 
-Current:
+The architecture is intentionally designed to accommodate future systems without structural redesign.
 
-```text
-Spawn
+Planned additions include:
 
-↓
-
-CPU Simulation
-
-↓
-
-CPU Renderer
-```
-
-Future:
-
-```text
-Spawn
-
-↓
-
-GPU Upload
-
-↓
-
-Compute Shader
-
-↓
-
-Persistent SSBO
-
-↓
-
-GPU Rendering
-```
-
-After GPU migration:
-
-* GPU owns particle memory.
-* CPU becomes orchestration only.
-* CPU simulation remains only as a reference implementation.
-
----
-
-# Future Systems
-
-Future subsystems include:
-
-* AI
-* Networking
+* GPU Compute Pipeline
+* Scene Hierarchy
+* Asset Management
+* Material System
+* AI Assistant
+* Timeline
+* Performance Profiler
+* Plugin System
 * Hand Tracking
-* Voice
-* XR
-* Scripting
+* Voice Interaction
 
-None of these communicate directly with Renderer or Simulation.
-
-They communicate through structured requests and the World.
-
----
-
-# Architectural Principles
-
-Always follow:
-
-* Single Responsibility Principle
-* One source of truth
-* Composition over coupling
-* Deterministic behavior
-* Explicit ownership
-* Clear dependency direction
-
-Never introduce:
-
-* duplicated state
-* duplicated constants
-* hidden ownership
-* circular dependencies
-* temporary compatibility layers
+New systems should integrate into the existing architecture rather than introducing new dependency patterns.
 
 ---
 
 # Architecture Stability
 
-This architecture is intended to remain stable throughout the lifetime of the project.
+This document describes the intended long-term structure of Aetheris.
 
-New features should extend the architecture rather than redesign it.
-
-Fundamental architectural changes should be extremely rare and only occur when they significantly improve correctness, maintainability, or extensibility.
+Subsystem implementations will evolve over time, but the architectural philosophy and module boundaries should remain stable throughout the project's lifetime.

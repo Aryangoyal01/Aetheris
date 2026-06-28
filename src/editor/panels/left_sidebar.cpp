@@ -1,45 +1,42 @@
 #include "left_sidebar.h"
 #include "../editor_state.h"
+#include "../theme/colors.h"
+#include <extras/IconsFontAwesome6.h>
 #include <imgui.h>
+#include "../theme/widgets.h"
+#include "../theme/theme.h"
 
 LeftSidebar::LeftSidebar(EditorState* state) : m_state(state) {}
 
 void LeftSidebar::Render()
 {
-    // Navigation column should have tight padding and no scrollbar
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(4, 16));
-    
-    // Hide standard window elements for a clean icon-strip look
-    ImGuiWindowFlags flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar;
-    
-    ImGui::SetNextWindowSizeConstraints(ImVec2(80, -1), ImVec2(80, -1));
+    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, Theme::Metrics::Spacing12));
+    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(0, Theme::Metrics::Spacing4));
+
+    ImGuiWindowFlags flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse;
+
+    ImGui::SetNextWindowSizeConstraints(ImVec2(Theme::Metrics::NavWidth, -1), ImVec2(Theme::Metrics::NavWidth, -1));
     ImGui::Begin(m_name.c_str(), nullptr, flags);
-    
-    ImVec2 btnSize = ImVec2(ImGui::GetContentRegionAvail().x, 60);
-    
-    // Selectable navigation "icons/buttons"
-    auto RenderNavButton = [&](const char* label, InspectorMode mode) {
+
+    // Top spacing
+    ImGui::Dummy(ImVec2(0, Theme::Metrics::Spacing8));
+
+    auto RenderNavButton = [&](const char* icon, const char* label, InspectorMode mode) {
         bool isActive = (m_state->activeMode == mode);
-        if (isActive) {
-            ImGui::PushStyleColor(ImGuiCol_Button, ImGui::GetStyle().Colors[ImGuiCol_ButtonActive]);
-        }
-        
-        if (ImGui::Button(label, btnSize)) {
+        if (Theme::Widgets::SidebarItem(label, icon, label, isActive, m_state->fontHeader)) {
             m_state->activeMode = mode;
         }
-        
-        if (isActive) {
-            ImGui::PopStyleColor();
-        }
-        ImGui::Spacing();
     };
 
-    RenderNavButton("Scene", InspectorMode::Scene);
-    RenderNavButton("Physx", InspectorMode::Physics);
-    RenderNavButton("Render", InspectorMode::Rendering);
-    RenderNavButton("Sim", InspectorMode::Simulation);
-    RenderNavButton("Export", InspectorMode::Export);
+    RenderNavButton(ICON_FA_CUBE, "Physics", InspectorMode::Physics);
+    RenderNavButton(ICON_FA_ATOM, "Particles", InspectorMode::Particles);
+    RenderNavButton(ICON_FA_CLOUD, "Environment", InspectorMode::Environment);
+    RenderNavButton(ICON_FA_LAYER_GROUP, "Scene", InspectorMode::Scene);
+    RenderNavButton(ICON_FA_CAMERA, "Camera", InspectorMode::Camera);
+    RenderNavButton(ICON_FA_FOLDER_OPEN, "Assets", InspectorMode::Assets);
+    RenderNavButton(ICON_FA_TERMINAL, "Console", InspectorMode::Console);
+    RenderNavButton(ICON_FA_GEAR, "Settings", InspectorMode::Settings);
 
     ImGui::End();
-    ImGui::PopStyleVar();
+    ImGui::PopStyleVar(2);
 }

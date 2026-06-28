@@ -40,6 +40,7 @@ add_executable(${PROJECT_NAME}
     
     # Editor
     src/editor/theme/theme.cpp
+    src/editor/theme/widgets.cpp
     src/editor/panels/viewport_panel.cpp
     src/editor/panels/toolbar_panel.cpp
     src/editor/panels/left_sidebar.cpp
@@ -49,6 +50,9 @@ add_executable(${PROJECT_NAME}
 
     # Application
     src/application/application.cpp
+
+    # Platform
+    src/platform/dpi_aware.cpp
 
     # Third Party Dependencies
     third_party/imgui/imgui.cpp

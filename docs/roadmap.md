@@ -1,227 +1,201 @@
-# AETHERIS — ROADMAP
+# AETHERIS — Roadmap
 
-> This document defines the long-term development roadmap of Aetheris.
+> This document outlines the long-term development roadmap of Aetheris.
 >
-> Milestones represent major architectural phases.
-> Checkpoints represent small, independently verifiable implementation steps.
->
-> Every milestone builds upon the previous one.
-> Earlier milestones should never require fundamental redesign.
+> Each milestone represents a major stage in the evolution of the engine. Detailed implementation history is maintained separately in `checkpoints.md`.
 
 ---
 
-# ✅ Milestone 0 — Foundation (Completed)
+# Project Progress
 
-Establish the core engine infrastructure.
+| Milestone                                | Status     |
+| ---------------------------------------- | ---------- |
+| Foundation                               | ✅ Complete |
+| Workspace & Rendering                    | ✅ Complete |
+| Physics Simulation                       | ✅ Complete |
+| Professional Editor (UI Foundation v1.0) | ✅ Complete |
+| GPU Compute Pipeline                     | 🚧 Next    |
+| Scene & Asset System                     | ⏳ Planned  |
+| AI Integration                           | ⏳ Planned  |
+| Advanced Editor Tools                    | ⏳ Planned  |
+| Production Release                       | ⏳ Future   |
 
-## Objectives
+---
 
+# ✅ Milestone 0 — Engine Foundation
+
+Established the core infrastructure required for the engine.
+
+Completed:
+
+* Application framework
 * Build system
-* Window management
-* Application lifecycle
 * Logging
-* Time subsystem
-* Input subsystem
+* Time management
+* Input system
 * Mathematical foundation
-* Coordinate projection
 * Documentation
 
-**Status:** Complete
-
 ---
 
-# ✅ Milestone 1 — 2D Workspace Foundation (Completed)
+# ✅ Milestone 1 — Interactive Workspace
 
-Build the interactive Cartesian workspace.
+Built the interactive 2D simulation environment.
 
-## Objectives
+Completed:
 
-* Cartesian world
+* Cartesian workspace
 * Orthographic viewport
 * World ↔ Screen projection
-* Grid rendering
-* Sandbox boundaries
-* Pan
-* Zoom
-* Particle rendering
-* Viewport interaction
-
-**Status:** Complete
+* Infinite grid
+* Camera controls
+* Particle visualization
 
 ---
 
-# ✅ Milestone 2 — CPU Reference Simulation (Completed)
+# ✅ Milestone 2 — Physics Foundation
 
-Create a deterministic CPU simulation that serves as the reference implementation.
+Implemented the reference CPU simulation.
 
-## Objectives
+Completed:
 
-* World
+* World model
 * Particle system
 * Spawn system
 * Gravity
-* Lifetime
-* Collision modes
+* Collision handling
 * Simulation settings
-* Spawn requests
-* Backend abstraction
-* Manual verification
+* Deterministic update loop
 
-The CPU simulation exists primarily as a correctness reference for future GPU development.
-
-**Status:** Complete
+This implementation serves as the correctness reference for future GPU execution.
 
 ---
 
-# 🚧 Milestone 3 — GPU Compute Infrastructure (Current)
+# ✅ Milestone 3 — Professional Editor (UI Foundation v1.0)
 
-Transition from CPU-driven simulation to GPU-native computation.
+Transformed the engine into a professional desktop editor.
 
-## Objectives
+Completed:
 
-### Phase 3.1
-
-* OpenGL 4.3 compute support
-* Compute shader management
-* Shader compilation
-* Empty compute dispatch
-
-### Phase 3.2
-
-* SSBO infrastructure
-* Persistent GPU buffers
-* Particle upload
-* Buffer validation
-
-### Phase 3.3
-
-* GPU gravity
-* GPU integration
-* CPU/GPU validation
-
-### Phase 3.4
-
-* GPU collision handling
-* Bounce
-* Wrap
-* Destroy
-
-### Phase 3.5
-
-* GPU particle rendering
-* Instanced rendering
-* Remove CPU rendering path
-
-### Phase 3.6
-
-* Final GPU-native simulation
-* CPU retained only as a reference implementation
-
-**Status:** In Progress
-
----
-
-# Milestone 4 — Professional Editor
-
-Transform the simulation into a production workspace.
-
-## Objectives
-
-* Dockable panels
-* Toolbar
+* Modern editor interface
+* Dockable workspace
+* Navigation rail
 * Inspector
-* Hierarchy
-* Properties
-* Timeline (future)
-* Debug overlays
-* Selection
-* Gizmos
-* Runtime controls
+* Console
+* Toolbar
+* Status telemetry
+* Reusable design system
+* Custom editor widgets
 
-The viewport remains the primary focus.
+The editor foundation is considered stable. Future UI work will be driven by new functionality rather than global redesigns.
 
 ---
 
-# Milestone 5 — Artificial Intelligence
+# 🚧 Milestone 4 — GPU Compute Pipeline
 
-Introduce AI as a first-class engine subsystem.
+Current Development Focus.
 
-## Objectives
+Objectives:
+
+* Compute shader framework
+* GPU particle storage (SSBO)
+* GPU simulation
+* GPU rendering
+* CPU/GPU validation
+* Fully GPU-native particle pipeline
+
+The CPU implementation will remain available as a reference implementation.
+
+---
+
+# 📋 Milestone 5 — Scene & Editor Systems
+
+Expand the editor into a complete content creation environment.
+
+Planned systems:
+
+* Scene hierarchy
+* Entity management
+* Asset browser
+* Material editor
+* Project serialization
+* Undo / Redo
+* Selection & Gizmos
+
+---
+
+# 🤖 Milestone 6 — AI Integration
+
+Introduce AI as a native editor subsystem.
+
+Planned capabilities:
 
 * Natural language interaction
 * Scene generation
 * Parameter editing
-* Simulation assistance
-* Autonomous workflows
-* Agentic AI
-* Engine reasoning
+* Workflow automation
+* Intelligent editor assistance
 
-AI communicates through structured engine commands rather than directly manipulating simulation or rendering.
+AI should operate through engine interfaces rather than direct subsystem manipulation.
 
 ---
 
-# Milestone 6 — Natural Interaction
+# ⚡ Milestone 7 — Advanced Tooling
 
-Extend the engine beyond mouse and keyboard.
+Expand Aetheris into a professional engineering platform.
 
-## Objectives
+Planned systems:
+
+* Performance profiler
+* Timeline
+* Graph editor
+* Plugin framework
+* Python scripting
+* Networking
+* Remote control
+* Advanced debugging tools
+
+---
+
+# 🌐 Milestone 8 — Natural Interaction
+
+Extend beyond traditional desktop interaction.
+
+Planned capabilities:
 
 * Hand tracking
 * Gesture recognition
 * Voice commands
-* Multi-modal interaction
-* Future XR interfaces
-
-All interaction methods ultimately produce structured world commands.
+* Multi-modal workflows
+* XR exploration
 
 ---
 
-# Milestone 7 — Networking
+# 🚀 Milestone 9 — Production Release
 
-Enable external communication and collaborative workflows.
+Prepare Aetheris for long-term use and public distribution.
 
-## Objectives
-
-* Remote control
-* Python integration
-* AI clients
-* Telemetry
-* Collaborative editing
-* Automation APIs
-
-Networking must remain independent of rendering.
-
----
-
-# Milestone 8 — Production
-
-Prepare Aetheris for long-term use and distribution.
-
-## Objectives
+Objectives:
 
 * Performance optimization
-* Serialization
-* Project saving/loading
-* Plugin system
-* Advanced rendering
+* Cross-platform support
 * Packaging
-* Documentation
 * Automated testing
-* Cross-platform validation
+* Documentation completion
+* Stable plugin ecosystem
+* Public releases
 
 ---
 
 # Long-Term Vision
 
-The completed engine will combine:
+Aetheris aims to become a professional GPU-native scientific simulation platform that combines:
 
-* GPU-native simulation
-* Professional editor tooling
-* Artificial intelligence
+* High-performance particle simulation
+* Modern editor tooling
+* AI-assisted workflows
+* Advanced visualization
 * Natural interaction
-* Networking
-* High-performance rendering
+* Extensible architecture
 
-within a single coherent architecture centered around one mathematical 2D world.
-
-Every milestone should move the project closer to that vision while preserving architectural stability.
+Every milestone should strengthen the existing architecture rather than introduce unnecessary redesigns, ensuring the engine remains modular, maintainable, and scalable throughout its evolution.

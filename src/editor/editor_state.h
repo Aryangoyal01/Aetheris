@@ -2,14 +2,24 @@
 
 enum class InspectorMode
 {
-    Scene,
     Physics,
-    Rendering,
-    Simulation,
-    Export
+    Particles,
+    Environment,
+    Scene,
+    Camera,
+    Assets,
+    Console,
+    Settings
 };
+
+struct ImFont;
 
 struct EditorState
 {
     InspectorMode activeMode = InspectorMode::Physics;
+    
+    ImFont* fontTitle = nullptr;
+    ImFont* fontHeader = nullptr;
+    ImFont* fontDefault = nullptr;
+    ImFont* fontCaption = nullptr;
 };

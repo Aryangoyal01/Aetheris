@@ -1,7 +1,11 @@
 #include "viewport_panel.h"
 #include "rendering/renderer.h"
 #include "viewport/viewport.h"
+#include "../theme/colors.h"
+#include <extras/IconsFontAwesome6.h>
 #include <imgui.h>
+#include "../theme/widgets.h"
+#include "../theme/theme.h"
 #include <rlImGui.h>
 #include <cmath>
 
@@ -38,6 +42,44 @@ void ViewportPanel::Render()
             // UVs map (0,1) -> (1,0) to properly match OpenGL Y-up texture coordinates
             ImGui::Image((ImTextureID)(intptr_t)target.texture.id, viewportPanelSize, ImVec2(0, 1), ImVec2(1, 0));
         }
+        
+        // Floating Viewport Toolbar
+        ImGui::SetCursorScreenPos(ImVec2(cursorScreenPos.x + Theme::Metrics::Spacing16, cursorScreenPos.y + Theme::Metrics::Spacing16));
+
+        // Shadow layer
+        ImVec2 toolbarSize(420, 56);
+        ImVec2 shadowPos = ImVec2(cursorScreenPos.x + Theme::Metrics::Spacing16 + 2, cursorScreenPos.y + Theme::Metrics::Spacing16 + 3);
+        ImDrawList* windowDl = ImGui::GetWindowDrawList();
+        windowDl->AddRectFilled(shadowPos, ImVec2(shadowPos.x + toolbarSize.x, shadowPos.y + toolbarSize.y),
+            IM_COL32(0, 0, 0, 60), Theme::Radii::Floating);
+
+        ImGui::PushStyleColor(ImGuiCol_ChildBg, ImVec4(0.08f, 0.08f, 0.09f, 0.92f));
+        ImGui::PushStyleVar(ImGuiStyleVar_ChildRounding, Theme::Radii::Floating);
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(Theme::Metrics::Spacing8, Theme::Metrics::Spacing6));
+        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 1.0f);
+        ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.18f, 0.18f, 0.20f, 0.8f));
+
+        if (ImGui::BeginChild("ViewportToolbar", toolbarSize, true, ImGuiWindowFlags_NoScrollbar))
+        {
+            ImVec2 bSize(40, 40);
+            Theme::Widgets::ToolbarButton("vp_sel", ICON_FA_ARROW_POINTER, true, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_pan", ICON_FA_HAND, false, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_add", ICON_FA_PLUS, false, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_rot", ICON_FA_ROTATE, false, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_del", ICON_FA_ERASER, false, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_grid", ICON_FA_TABLE_CELLS, false, bSize);
+            ImGui::SameLine();
+            Theme::Widgets::ToolbarButton("vp_cfg", ICON_FA_GEAR, false, bSize);
+        }
+        ImGui::EndChild();
+
+        ImGui::PopStyleColor(2);
+        ImGui::PopStyleVar(3);
     }
 
     if (m_isHovered)

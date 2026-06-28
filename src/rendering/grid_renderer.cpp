@@ -5,10 +5,10 @@
 
 static constexpr float TARGET_SCREEN_SPACING = 75.0f;
 
-static constexpr Color MINOR_LINE = { 50, 50, 50, 255 };
-static constexpr Color MAJOR_LINE = { 70, 70, 70, 255 };
-static constexpr Color AXIS_COLOR = { 0, 200, 200, 255 };
-static constexpr Color BORDER_COLOR = { 80, 80, 80, 255 };
+static constexpr Color MINOR_LINE = { 32, 32, 34, 255 };
+static constexpr Color MAJOR_LINE = { 55, 55, 58, 255 };
+static constexpr Color AXIS_COLOR = { 0, 180, 190, 255 };
+static constexpr Color BORDER_COLOR = { 65, 65, 68, 255 };
 
 static constexpr float PREFERRED_SPACINGS[] = {
     0.01f, 0.02f, 0.05f,

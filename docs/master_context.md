@@ -1,490 +1,175 @@
-# AETHERIS — MASTER CONTEXT
+# AETHERIS — Master Context
 
 > **Authoritative Project Context**
 >
-> This document is the single source of truth for Project Aetheris.
-> Every developer, contributor, or AI agent must read and understand this document before making architectural or implementation decisions.
+> This document provides the current state of the Aetheris project.
+>
+> It should be the **first document** read by any developer or AI agent before contributing to the codebase.
+>
+> Detailed information is available in:
+>
+> * `vision.md`
+> * `architecture.md`
+> * `systems.md`
+> * `roadmap.md`
+> * `coding_standards.md`
+> * `development_workflow.md`
 
 ---
 
-# Project Overview
+# Project Summary
 
-Aetheris is a modern, GPU-first **2D simulation platform** that combines real-time physics, artificial intelligence, computer vision, natural interaction, and professional tooling into a unified environment.
+Aetheris is a modern **GPU-native scientific simulation platform** written in C++ using OpenGL, Raylib, and Dear ImGui.
+
+The project combines a high-performance simulation engine with a professional editor designed for interactive scientific visualization and future AI-assisted workflows.
 
 It is **not** a game engine.
 
-It is **not** a 3D engine.
-
-It is a professional simulation workspace built around a mathematically correct Cartesian world.
-
-The long-term objective is to simulate hundreds of thousands (eventually millions) of entities entirely on the GPU while allowing interaction through traditional UI, AI, voice, networking, computer vision, and future XR interfaces.
+Its primary goal is to become a modular platform for real-time simulation, visualization, and experimentation.
 
 ---
 
-# Vision
+# Current Status
 
-The engine should resemble professional scientific and creative software rather than a traditional game.
+## Overall Progress
 
-Inspirations include:
+Current milestone:
 
-* Desmos
-* GeoGebra
-* Houdini
-* Blender (workflow philosophy)
-* TouchDesigner
-* Processing
+**GPU Compute Pipeline**
 
-Core values:
+Previous milestones completed:
 
-* Mathematical correctness
-* Performance
-* Predictability
-* Modularity
-* Extensibility
-* Simplicity
+* ✅ Engine Foundation
+* ✅ Interactive Workspace
+* ✅ CPU Reference Simulation
+* ✅ Professional Editor (UI Foundation v1.0)
+
+The project has transitioned from building infrastructure to implementing core engine functionality.
 
 ---
 
-# Fundamental Design Philosophy
+# Current Architecture
 
-## One World
+The architecture is considered stable.
 
-There is exactly one World.
+Major subsystems include:
 
-Every subsystem communicates through the World.
+* Application
+* Editor
+* Input
+* World
+* Spawn System
+* Simulation
+* Renderer
+* Viewport
 
-The World is the single source of truth.
-
----
-
-## True 2D
-
-Everything exists only in:
-
-(x, y)
-
-There is:
-
-* no perspective
-* no hidden Z axis
-* no Camera2D
-* no Camera3D
-* no ray-plane intersection
-* no rotation
-* no pitch
-* no yaw
-
-The engine behaves as a Cartesian graph.
+Subsystem responsibilities and dependencies are documented in `architecture.md`.
 
 ---
 
-## Viewport Philosophy
+# Current Engine Capabilities
 
-The viewport behaves like a graphing calculator.
+Implemented:
 
-Zoom changes only scale.
+* Modular application framework
+* Dockable editor
+* Modern UI design system
+* Cartesian world
+* Camera controls
+* Particle rendering
+* CPU particle simulation
+* Physics inspector
+* Console
+* Status telemetry
+* Deterministic update loop
 
-Pan changes only origin.
-
-Simulation never knows the viewport exists.
-
-Rendering never modifies simulation.
-
-World coordinates are absolute.
-
----
-
-# Core Architecture
-
-The engine is organized into independent subsystems.
-
-Application
-
-↓
-
-Input
-
-↓
-
-Spawn System
-
-↓
-
-World
-
-↓
-
-Simulation
-
-↓
-
-Renderer
-
-↓
-
-Viewport
-
-↓
-
-Screen
-
-The Application orchestrates.
-
-Every subsystem has exactly one responsibility.
-
-No circular dependencies are allowed.
+Current simulation is CPU-based and serves as the reference implementation.
 
 ---
 
-# Current Simulation Architecture
+# Current Design Decisions
 
-The CPU implementation exists only as the reference implementation.
+The following decisions are considered foundational:
 
-Its purpose is:
+* One shared World model.
+* Deterministic simulation.
+* Separation between Editor and Engine.
+* Modular subsystem architecture.
+* Explicit ownership.
+* GPU-first long-term direction.
+* Professional desktop application workflow.
 
-* verify algorithms
-* validate correctness
-* provide regression testing
-
-The production engine will use GPU compute.
-
-Once GPU parity is achieved:
-
-* GPU becomes the authoritative simulation backend.
-* CPU simulation remains only as a reference implementation for debugging and validation.
+These should not be changed without strong architectural justification.
 
 ---
 
-# World Model
+# Immediate Development Priorities
 
-The World owns all simulation state.
+Current focus:
 
-Current entities include particles.
+1. GPU Compute Shader framework
+2. SSBO infrastructure
+3. GPU particle simulation
+4. GPU rendering
+5. CPU/GPU validation
 
-Future entities may include:
+After GPU migration:
 
-* constraints
-* emitters
-* fields
-* attractors
-* rigid bodies
-* simulation tools
-
-No subsystem except Simulation modifies World state.
-
----
-
-# Rendering Philosophy
-
-Renderer visualizes the World.
-
-Renderer never owns simulation.
-
-Renderer never modifies simulation.
-
-Future renderer responsibilities include:
-
-* particles
-* grids
-* sandbox
-* gizmos
-* debug overlays
-* editor visualization
-* selection
-* GPU instanced rendering
-
----
-
-# GPU Philosophy
-
-GPU compute is a foundational technology.
-
-The GPU owns particle memory.
-
-Simulation executes entirely on the GPU.
-
-The CPU coordinates.
-
-The GPU computes.
-
-The intended pipeline is:
-
-Spawn Requests
-
-↓
-
-GPU Upload
-
-↓
-
-Persistent SSBO
-
-↓
-
-Compute Shader
-
-↓
-
-Memory Barrier
-
-↓
-
-GPU Renderer
-
-↓
-
-Screen
-
-Avoid:
-
-* unnecessary CPU readback
-* duplicate particle storage
-* CPU-side simulation after GPU transition
-
----
-
-# Physics Philosophy
-
-Physics is deterministic.
-
-The CPU reference defines expected behavior.
-
-The GPU implementation must reproduce that behavior.
-
-Current features:
-
-* gravity
-* lifetime
-* world bounds
-* collision modes
-* spawning
-
-Future features:
-
-* constraints
-* attractors
-* force fields
-* fluids
-* procedural emitters
-* custom solvers
-
----
-
-# Coordinate System
-
-There is exactly one coordinate system.
-
-Everything exists in World coordinates.
-
-Only two conversion functions exist:
-
-ScreenToWorld()
-
-WorldToScreen()
-
-They must remain exact mathematical inverses.
-
-No subsystem performs its own coordinate conversion.
-
----
-
-# Editor Philosophy
-
-The editor is a first-class subsystem.
-
-It controls the simulation.
-
-It never owns simulation.
-
-Future layout:
-
-Toolbar
-
-Left Sidebar
-
-Viewport
-
-Inspector
-
-Bottom Dock
-
-The simulation viewport is always the primary focus.
-
----
-
-# Artificial Intelligence
-
-AI is a first-class subsystem.
-
-AI communicates through structured engine commands.
-
-AI never manipulates rendering directly.
-
-Future capabilities:
-
-* natural language
-* procedural generation
-* scene editing
-* simulation control
-* parameter tuning
-* assistant workflows
-* autonomous agents
-
----
-
-# Natural Interaction
-
-Traditional mouse and keyboard are only one input method.
-
-Future input systems include:
-
-* hand tracking
-* gestures
-* voice
-* XR
-* networking
-* AI agents
-
-Every interaction ultimately produces structured engine commands.
-
-No subsystem should know the origin of an interaction.
-
----
-
-# Engineering Principles
-
-Always prefer:
-
-* single responsibility
-* deterministic behavior
-* composition over inheritance
-* composition over coupling
-* modularity
-* readability
-* maintainability
-
-Avoid:
-
-* duplicated systems
-* duplicated constants
-* hidden state
-* unnecessary abstraction
-* temporary hacks
-* architectural debt
-
-Delete obsolete code rather than preserving compatibility layers.
-
----
-
-# Development Workflow
-
-Development proceeds through milestones.
-
-Each milestone is divided into checkpoints.
-
-Every checkpoint must:
-
-* compile
-* preserve previous behavior
-* be independently testable
-* stop after implementation
-* undergo manual visual verification
-
-No checkpoint should require future redesign.
-
----
-
-# Current Roadmap
-
-Milestone 0
-
-Foundation
-
-✓ Complete
-
----
-
-Milestone 1
-
-2D Workspace Foundation
-
-✓ Complete
-
----
-
-Milestone 2
-
-CPU Reference Simulation
-
-✓ Complete
-
----
-
-Milestone 3
-
-GPU Compute Infrastructure
-
-(Current)
-
----
-
-Milestone 4
-
-GPU-Native Simulation
-
----
-
-Milestone 5
-
-Professional Editor
-
----
-
-Milestone 6
-
-Artificial Intelligence
-
----
-
-Milestone 7
-
-Natural Interaction
-
-* Hand Tracking
-* Gestures
-* Voice
-
----
-
-Milestone 8
-
-Networking
-
----
-
-Milestone 9
-
-Production
-
-* Optimization
+* Scene hierarchy
+* Asset browser
+* Material system
 * Serialization
-* Plugins
-* Advanced Rendering
-* Packaging
+* AI assistant
+* Performance profiler
 
 ---
 
-# Success Criteria
+# Future Direction
 
-Aetheris succeeds when it becomes a stable, extensible, GPU-native simulation platform where:
+The long-term objective is to evolve Aetheris into a complete engineering platform supporting:
 
-* GPU physics
-* AI
-* networking
-* computer vision
-* natural interaction
-* professional editor tooling
+* GPU-native simulation
+* AI-assisted workflows
+* Professional editor tooling
+* Natural interaction
+* Plugin architecture
+* Advanced visualization
 
-operate together inside one coherent architecture without requiring fundamental redesign.
+Future milestones are described in `roadmap.md`.
 
-Every implementation decision should move the engine closer to that goal.
+---
+
+# Working Principles
+
+Every implementation should:
+
+* Preserve architectural consistency.
+* Follow the coding standards.
+* Respect subsystem boundaries.
+* Remain independently testable.
+* Leave the project in a stable state.
+
+Development always proceeds through small, reviewable checkpoints.
+
+---
+
+# Before Starting Any New Work
+
+Before implementing a feature:
+
+1. Read this document.
+2. Review `architecture.md`.
+3. Review `systems.md`.
+4. Check `roadmap.md` for the current milestone.
+5. Follow `coding_standards.md`.
+6. Implement the feature using the defined development workflow.
+
+---
+
+# Purpose of this Document
+
+This document is intentionally concise.
+
+It does **not** duplicate detailed architectural, system, or roadmap information.
+
+Instead, it provides the current project snapshot and directs contributors to the appropriate documentation for deeper understanding.
