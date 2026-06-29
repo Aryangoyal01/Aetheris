@@ -53,14 +53,14 @@ Current milestone:
 
 Completed milestones:
 
-* ✅ Engine Foundation
-* ✅ Interactive Workspace
-* ✅ CPU Reference Simulation
-* ✅ Professional Editor (UI Foundation v1.0)
+* Engine Foundation
+* Interactive Workspace
+* CPU Reference Simulation
+* Professional Editor (UI Foundation v1.0)
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 Project documentation is available in the `docs/` directory, including:
 
