@@ -20,8 +20,9 @@ Editor::Editor() = default;
 
 Editor::~Editor() = default;
 
-void Editor::Initialize(Renderer* renderer, Viewport* viewport)
+void Editor::Initialize(Renderer* renderer, Viewport* viewport, SimulationSettings* settings)
 {
+    m_state.settings = settings;
     rlImGuiSetup(true); // Sets up imgui, default font, and FA5
     
     ImPlot::CreateContext();
@@ -140,12 +141,24 @@ void Editor::Update()
         ImGui::GetColorU32(Theme::Colors::BorderStrong));
 
     // Left side chips
-    Theme::Widgets::StatusChip("SIMULATION STATE", "PAUSED", Theme::Colors::AccentCyan);
+    const char* stateStr = "EDIT";
+    ImVec4 stateColor = Theme::Colors::TextDim;
+    if (m_state.settings) {
+        if (m_state.settings->state == SimulationState::Play) {
+            stateStr = "PLAY";
+            stateColor = Theme::Colors::Success;
+        } else if (m_state.settings->state == SimulationState::Pause) {
+            stateStr = "PAUSE";
+            stateColor = Theme::Colors::Warning;
+        }
+    }
+    Theme::Widgets::StatusChip("SIMULATION STATE", stateStr, stateColor);
     ImGui::SameLine(0, 12);
-    Theme::Widgets::StatusChip("CAMERA", "PERSPECTIVE", Theme::Colors::TextDim);
+    Theme::Widgets::StatusChip("CAMERA", "ORTHOGRAPHIC", Theme::Colors::TextDim);
     ImGui::SameLine(0, 12);
-    Theme::Widgets::StatusChip("PARTICLES", "1,024,000", Theme::Colors::Success);
-
+    uint32_t maxP = m_state.settings ? m_state.settings->maxParticles : 0;
+    std::string pCountStr = Theme::Widgets::FormatNumber(m_state.particleCount) + " / " + Theme::Widgets::FormatNumber(maxP);
+    Theme::Widgets::StatusChip("PARTICLES", pCountStr.c_str(), Theme::Colors::Success);
     // Right side chips — pushed far right with clear spacing
     float rightPad = Theme::Metrics::Spacing20;
 
@@ -158,11 +171,15 @@ void Editor::Update()
 
     // Frame Time chip
     ImGui::SameLine(viewport->WorkSize.x - 310.0f - rightPad);
-    Theme::Widgets::StatusChip("FRAME TIME", "16.6 ms", Theme::Colors::Success);
+    char ftBuf[32];
+    snprintf(ftBuf, sizeof(ftBuf), "%.1f ms", m_state.frameTimeMs);
+    Theme::Widgets::StatusChip("FRAME TIME", ftBuf, Theme::Colors::Success);
 
     // GPU Compute chip
     ImGui::SameLine(viewport->WorkSize.x - 520.0f - rightPad);
-    Theme::Widgets::StatusChip("GPU COMPUTE", "5.21 ms", Theme::Colors::AccentPurple);
+    char gtBuf[32];
+    snprintf(gtBuf, sizeof(gtBuf), "%.2f ms", m_state.gpuTimeMs);
+    Theme::Widgets::StatusChip("GPU COMPUTE", gtBuf, Theme::Colors::AccentPurple);
 
     if (m_state.fontCaption) ImGui::PopFont();
 
@@ -183,6 +200,32 @@ void Editor::Destroy()
     m_panels.clear();
     ImPlot::DestroyContext();
     rlImGuiShutdown();
+}
+
+void Editor::SetTelemetry(int fps, float frameTimeMs, float gpuTimeMs, int particleCount)
+{
+    m_state.fps = fps;
+    m_state.frameTimeMs = frameTimeMs;
+    m_state.gpuTimeMs = gpuTimeMs;
+    m_state.particleCount = particleCount;
+}
+
+bool Editor::ConsumeClearParticlesRequest()
+{
+    if (m_state.clearParticlesRequested) {
+        m_state.clearParticlesRequested = false;
+        return true;
+    }
+    return false;
+}
+
+bool Editor::ConsumeSyncRequest()
+{
+    if (m_state.syncRequested) {
+        m_state.syncRequested = false;
+        return true;
+    }
+    return false;
 }
 
 bool Editor::IsViewportHovered() const
@@ -263,7 +306,7 @@ void Editor::SetupDockspace()
         ImGuiDockNode* node_center = ImGui::DockBuilderGetNode(dock_main_id);
         
         if (node_left) { node_left->LocalFlags |= ImGuiDockNodeFlags_HiddenTabBar | ImGuiDockNodeFlags_NoWindowMenuButton | ImGuiDockNodeFlags_NoCloseButton | ImGuiDockNodeFlags_NoResize; }
-        if (node_right) { node_right->LocalFlags |= ImGuiDockNodeFlags_HiddenTabBar | ImGuiDockNodeFlags_NoWindowMenuButton | ImGuiDockNodeFlags_NoCloseButton; }
+        if (node_right) { node_right->LocalFlags |= ImGuiDockNodeFlags_HiddenTabBar | ImGuiDockNodeFlags_NoWindowMenuButton | ImGuiDockNodeFlags_NoCloseButton | ImGuiDockNodeFlags_NoResize; }
         if (node_bottom) { node_bottom->LocalFlags |= ImGuiDockNodeFlags_HiddenTabBar | ImGuiDockNodeFlags_NoWindowMenuButton | ImGuiDockNodeFlags_NoCloseButton; }
         if (node_center) { node_center->LocalFlags |= ImGuiDockNodeFlags_HiddenTabBar | ImGuiDockNodeFlags_NoWindowMenuButton | ImGuiDockNodeFlags_NoCloseButton; }
         

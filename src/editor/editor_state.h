@@ -12,6 +12,8 @@ enum class InspectorMode
     Settings
 };
 
+#include "../simulation/simulation_settings.h"
+
 struct ImFont;
 
 struct EditorState
@@ -22,4 +24,14 @@ struct EditorState
     ImFont* fontHeader = nullptr;
     ImFont* fontDefault = nullptr;
     ImFont* fontCaption = nullptr;
+
+    SimulationSettings* settings = nullptr;
+    
+    int fps = 0;
+    float frameTimeMs = 0.0f;
+    float gpuTimeMs = 0.0f;
+    int particleCount = 0;
+    
+    bool clearParticlesRequested = false;
+    bool syncRequested = false;
 };

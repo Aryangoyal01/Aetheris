@@ -35,9 +35,19 @@ events:
     found: "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -51,14 +61,28 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
+      ENV{INCLUDE}:
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\ATLMFC\\include"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Auxiliary\\VS\\include"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\um"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\shared"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\winrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\cppwinrt"
   -
     kind: "message-v1"
     backtrace:
@@ -75,7 +99,7 @@ events:
       The output was:
       0
       MSBuild version 18.7.8+1ac568fee for .NET Framework
-      Build started 28-06-2026 10:01:17.
+      Build started 06-07-2026 17:57:32.
       
       Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\4.3.2\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -104,7 +128,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.50
+      Time Elapsed 00:00:00.71
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -137,9 +161,18 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -153,22 +186,37 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -182,14 +230,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
   -
     kind: "find-v1"
     backtrace:
@@ -213,9 +266,18 @@ events:
       - "lld-link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -229,27 +291,59 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lld-link"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/lld-link.com"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/lld-link.exe"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/lld-link"
-      - "C:/Python313/Scripts/lld-link.com"
-      - "C:/Python313/Scripts/lld-link.exe"
-      - "C:/Python313/Scripts/lld-link"
-      - "C:/Python313/lld-link.com"
-      - "C:/Python313/lld-link.exe"
-      - "C:/Python313/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/lld-link"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.com"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/lld-link"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.com"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link.exe"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/lld-link"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/lld-link.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/lld-link.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/lld-link"
       - "C:/Windows/System32/lld-link.com"
       - "C:/Windows/System32/lld-link.exe"
       - "C:/Windows/System32/lld-link"
@@ -287,9 +381,19 @@ events:
     found: "C:/LLVM/bin/lld-link.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -303,14 +407,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
   -
     kind: "find-v1"
     backtrace:
@@ -332,9 +441,18 @@ events:
       - "link"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -348,22 +466,37 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/link.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -377,14 +510,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
   -
     kind: "find-v1"
     backtrace:
@@ -406,9 +544,18 @@ events:
       - "mt"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -422,96 +569,58 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/mt.com"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/mt.exe"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/mt"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/mt.com"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/mt.exe"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/mt"
-      - "C:/Python313/Scripts/mt.com"
-      - "C:/Python313/Scripts/mt.exe"
-      - "C:/Python313/Scripts/mt"
-      - "C:/Python313/mt.com"
-      - "C:/Python313/mt.exe"
-      - "C:/Python313/mt"
-      - "C:/Windows/System32/mt.com"
-      - "C:/Windows/System32/mt.exe"
-      - "C:/Windows/System32/mt"
-      - "C:/Windows/mt.com"
-      - "C:/Windows/mt.exe"
-      - "C:/Windows/mt"
-      - "C:/Windows/System32/wbem/mt.com"
-      - "C:/Windows/System32/wbem/mt.exe"
-      - "C:/Windows/System32/wbem/mt"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
-      - "C:/Windows/System32/OpenSSH/mt.com"
-      - "C:/Windows/System32/OpenSSH/mt.exe"
-      - "C:/Windows/System32/OpenSSH/mt"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
-      - "C:/Program Files/dotnet/mt.com"
-      - "C:/Program Files/dotnet/mt.exe"
-      - "C:/Program Files/dotnet/mt"
-      - "C:/ProgramData/chocolatey/bin/mt.com"
-      - "C:/ProgramData/chocolatey/bin/mt.exe"
-      - "C:/ProgramData/chocolatey/bin/mt"
-      - "C:/MinGW/bin/mt.com"
-      - "C:/MinGW/bin/mt.exe"
-      - "C:/MinGW/bin/mt"
-      - "C:/Program Files/Git/cmd/mt.com"
-      - "C:/Program Files/Git/cmd/mt.exe"
-      - "C:/Program Files/Git/cmd/mt"
-      - "C:/Program Files/CMake/bin/mt.com"
-      - "C:/Program Files/CMake/bin/mt.exe"
-      - "C:/Program Files/CMake/bin/mt"
-      - "C:/LLVM/bin/mt.com"
-      - "C:/LLVM/bin/mt.exe"
-      - "C:/LLVM/bin/mt"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/mt"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.com"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/mt"
-      - "C:/Program Files/nodejs/mt.com"
-      - "C:/Program Files/nodejs/mt.exe"
-      - "C:/Program Files/nodejs/mt"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/mt.com"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/mt.exe"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/mt"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/mt.com"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/mt.exe"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/mt"
-      - "C:/Users/aryan/AppData/Local/Python/bin/mt.com"
-      - "C:/Users/aryan/AppData/Local/Python/bin/mt.exe"
-      - "C:/Users/aryan/AppData/Local/Python/bin/mt"
-      - "C:/msys64/ucrt64/bin/mt.com"
-      - "C:/msys64/ucrt64/bin/mt.exe"
-      - "C:/msys64/ucrt64/bin/mt"
-      - "C:/Users/aryan/AppData/Roaming/npm/mt.com"
-      - "C:/Users/aryan/AppData/Roaming/npm/mt.exe"
-      - "C:/Users/aryan/AppData/Roaming/npm/mt"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/mt.com"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/mt.exe"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/mt"
-    found: false
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/mt"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/mt"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/mt"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/mt"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/mt"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/mt"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/mt.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -525,14 +634,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
   -
     kind: "find-v1"
     backtrace:
@@ -554,9 +668,18 @@ events:
       - "lib"
     candidate_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -570,22 +693,37 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
     searched_directories:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lib.com"
     found: "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/lib.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -599,14 +737,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
   -
     kind: "find-v1"
     backtrace:
@@ -634,9 +777,19 @@ events:
     found: "C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeCXXCompilerId.cpp.in"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -650,14 +803,28 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
+      ENV{INCLUDE}:
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\include"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\ATLMFC\\include"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Auxiliary\\VS\\include"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\include\\10.0.26100.0\\ucrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\um"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\shared"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\winrt"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\\\include\\10.0.26100.0\\\\cppwinrt"
   -
     kind: "message-v1"
     backtrace:
@@ -674,7 +841,7 @@ events:
       The output was:
       0
       MSBuild version 18.7.8+1ac568fee for .NET Framework
-      Build started 28-06-2026 10:01:18.
+      Build started 06-07-2026 17:57:33.
       
       Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\4.3.2\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -703,7 +870,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.48
+      Time Elapsed 00:00:00.45
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -736,9 +903,19 @@ events:
     names:
       - "rc"
     candidate_directories:
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/"
-      - "C:/Python313/Scripts/"
-      - "C:/Python313/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/x64/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/"
+      - "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/Tools/"
       - "C:/Windows/System32/"
       - "C:/Windows/"
       - "C:/Windows/System32/wbem/"
@@ -752,14 +929,19 @@ events:
       - "C:/Program Files/CMake/bin/"
       - "C:/LLVM/bin/"
       - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Program Files/nodejs/"
+      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/"
       - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/"
       - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/"
       - "C:/Users/aryan/AppData/Local/Python/bin/"
       - "C:/msys64/ucrt64/bin/"
       - "C:/Users/aryan/AppData/Roaming/npm/"
       - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/Llvm/x64/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/Linux/bin/ConnectionManagerExe/"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/vcpkg/"
       - "C:/Program Files/bin/"
       - "C:/Program Files/sbin/"
       - "C:/Program Files/"
@@ -773,120 +955,44 @@ events:
       - "C:/Program Files (x86)/Aetheris/sbin/"
       - "C:/Program Files (x86)/Aetheris/"
     searched_directories:
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/rc.com"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/rc.exe"
-      - "C:/Users/aryan/.gemini/antigravity-ide/bin/rc"
-      - "C:/Python313/Scripts/rc.com"
-      - "C:/Python313/Scripts/rc.exe"
-      - "C:/Python313/Scripts/rc"
-      - "C:/Python313/rc.com"
-      - "C:/Python313/rc.exe"
-      - "C:/Python313/rc"
-      - "C:/Windows/System32/rc.com"
-      - "C:/Windows/System32/rc.exe"
-      - "C:/Windows/System32/rc"
-      - "C:/Windows/rc.com"
-      - "C:/Windows/rc.exe"
-      - "C:/Windows/rc"
-      - "C:/Windows/System32/wbem/rc.com"
-      - "C:/Windows/System32/wbem/rc.exe"
-      - "C:/Windows/System32/wbem/rc"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
-      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
-      - "C:/Windows/System32/OpenSSH/rc.com"
-      - "C:/Windows/System32/OpenSSH/rc.exe"
-      - "C:/Windows/System32/OpenSSH/rc"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
-      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
-      - "C:/Program Files/dotnet/rc.com"
-      - "C:/Program Files/dotnet/rc.exe"
-      - "C:/Program Files/dotnet/rc"
-      - "C:/ProgramData/chocolatey/bin/rc.com"
-      - "C:/ProgramData/chocolatey/bin/rc.exe"
-      - "C:/ProgramData/chocolatey/bin/rc"
-      - "C:/MinGW/bin/rc.com"
-      - "C:/MinGW/bin/rc.exe"
-      - "C:/MinGW/bin/rc"
-      - "C:/Program Files/Git/cmd/rc.com"
-      - "C:/Program Files/Git/cmd/rc.exe"
-      - "C:/Program Files/Git/cmd/rc"
-      - "C:/Program Files/CMake/bin/rc.com"
-      - "C:/Program Files/CMake/bin/rc.exe"
-      - "C:/Program Files/CMake/bin/rc"
-      - "C:/LLVM/bin/rc.com"
-      - "C:/LLVM/bin/rc.exe"
-      - "C:/LLVM/bin/rc"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.com"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc.exe"
-      - "C:/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR/rc"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.com"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc.exe"
-      - "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/rc"
-      - "C:/Program Files/nodejs/rc.com"
-      - "C:/Program Files/nodejs/rc.exe"
-      - "C:/Program Files/nodejs/rc"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/rc.com"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/rc.exe"
-      - "C:/Users/aryan/AppData/Local/Microsoft/WindowsApps/rc"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/rc.com"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/rc.exe"
-      - "C:/Users/aryan/AppData/Local/Programs/Microsoft VS Code/bin/rc"
-      - "C:/Users/aryan/AppData/Local/Python/bin/rc.com"
-      - "C:/Users/aryan/AppData/Local/Python/bin/rc.exe"
-      - "C:/Users/aryan/AppData/Local/Python/bin/rc"
-      - "C:/msys64/ucrt64/bin/rc.com"
-      - "C:/msys64/ucrt64/bin/rc.exe"
-      - "C:/msys64/ucrt64/bin/rc"
-      - "C:/Users/aryan/AppData/Roaming/npm/rc.com"
-      - "C:/Users/aryan/AppData/Roaming/npm/rc.exe"
-      - "C:/Users/aryan/AppData/Roaming/npm/rc"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/rc.com"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/rc.exe"
-      - "C:/Users/aryan/AppData/Local/Programs/Antigravity IDE/bin/rc"
-      - "C:/Program Files/bin/rc.com"
-      - "C:/Program Files/bin/rc.exe"
-      - "C:/Program Files/bin/rc"
-      - "C:/Program Files/sbin/rc.com"
-      - "C:/Program Files/sbin/rc.exe"
-      - "C:/Program Files/sbin/rc"
-      - "C:/Program Files/rc.com"
-      - "C:/Program Files/rc.exe"
-      - "C:/Program Files/rc"
-      - "C:/Program Files (x86)/bin/rc.com"
-      - "C:/Program Files (x86)/bin/rc.exe"
-      - "C:/Program Files (x86)/bin/rc"
-      - "C:/Program Files (x86)/sbin/rc.com"
-      - "C:/Program Files (x86)/sbin/rc.exe"
-      - "C:/Program Files (x86)/sbin/rc"
-      - "C:/Program Files (x86)/rc.com"
-      - "C:/Program Files (x86)/rc.exe"
-      - "C:/Program Files (x86)/rc"
-      - "C:/Program Files/CMake/bin/rc.com"
-      - "C:/Program Files/CMake/bin/rc.exe"
-      - "C:/Program Files/CMake/bin/rc"
-      - "C:/Program Files/CMake/sbin/rc.com"
-      - "C:/Program Files/CMake/sbin/rc.exe"
-      - "C:/Program Files/CMake/sbin/rc"
-      - "C:/Program Files/CMake/rc.com"
-      - "C:/Program Files/CMake/rc.exe"
-      - "C:/Program Files/CMake/rc"
-      - "C:/Program Files (x86)/Aetheris/bin/rc.com"
-      - "C:/Program Files (x86)/Aetheris/bin/rc.exe"
-      - "C:/Program Files (x86)/Aetheris/bin/rc"
-      - "C:/Program Files (x86)/Aetheris/sbin/rc.com"
-      - "C:/Program Files (x86)/Aetheris/sbin/rc.exe"
-      - "C:/Program Files (x86)/Aetheris/sbin/rc"
-      - "C:/Program Files (x86)/Aetheris/rc.com"
-      - "C:/Program Files (x86)/Aetheris/rc.exe"
-      - "C:/Program Files (x86)/Aetheris/rc"
-    found: false
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/VC/vcpackages/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TestWindow/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/Roslyn/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Team Tools/DiagnosticsHub/Collector/rc"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.com"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc.exe"
+      - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/Extensions/Microsoft/CodeCoverage.Console/rc"
+      - "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.com"
+    found: "C:/Program Files (x86)/Windows Kits/10/bin/10.0.26100.0/x64/rc.exe"
     search_context:
       ENV{PATH}:
-        - "C:/Users/aryan/.gemini/antigravity-ide/bin"
-        - "C:\\Python313\\Scripts\\"
-        - "C:\\Python313\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\VCPackages"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TestWindow"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\TeamFoundation\\Team Explorer"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\MSBuild\\Current\\bin\\Roslyn"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Team Tools\\DiagnosticsHub\\Collector"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\Extensions\\Microsoft\\CodeCoverage.Console"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.26100.0\\\\x64"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\\\x64"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\\\MSBuild\\Current\\Bin\\amd64"
+        - "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\Tools\\"
         - "C:\\WINDOWS\\system32"
         - "C:\\WINDOWS"
         - "C:\\WINDOWS\\System32\\Wbem"
@@ -900,14 +1006,19 @@ events:
         - "C:\\Program Files\\CMake\\bin"
         - "C:\\LLVM\\bin"
         - "C:\\Program Files\\NVIDIA Corporation\\NVIDIA App\\NvDLISR"
-        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Program Files\\nodejs\\"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
         - "C:\\Users\\aryan\\AppData\\Local\\Microsoft\\WindowsApps"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\Users\\aryan\\AppData\\Local\\Python\\bin"
         - "C:\\msys64\\ucrt64\\bin"
         - "C:\\Users\\aryan\\AppData\\Roaming\\npm"
         - "C:\\Users\\aryan\\AppData\\Local\\Programs\\Antigravity IDE\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\VC\\Linux\\bin\\ConnectionManagerExe"
+        - "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\vcpkg"
       CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Aetheris"
       CMAKE_SYSTEM_PREFIX_PATH:
         - "C:/Program Files"
@@ -923,8 +1034,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-es4vjp"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-es4vjp"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-e17e6h"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-e17e6h"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
@@ -934,39 +1045,39 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-es4vjp'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-e17e6h'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_50c4b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c813e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:19.
+        Build started 06-07-2026 17:57:34.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-es4vjp\\cmTC_50c4b.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17e6h\\cmTC_c813e.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-es4vjp\\Debug\\".
-          Creating directory "cmTC_50c4b.dir\\Debug\\cmTC_50c4b.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17e6h\\Debug\\".
+          Creating directory "cmTC_c813e.dir\\Debug\\cmTC_c813e.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_50c4b.dir\\Debug\\cmTC_50c4b.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_50c4b.dir\\Debug\\cmTC_50c4b.tlog\\unsuccessfulbuild".
+          Creating "cmTC_c813e.dir\\Debug\\cmTC_c813e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_c813e.dir\\Debug\\cmTC_c813e.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_50c4b.dir\\Debug\\\\" /Fd"cmTC_50c4b.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c813e.dir\\Debug\\\\" /Fd"cmTC_c813e.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_50c4b.dir\\Debug\\\\" /Fd"cmTC_50c4b.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c813e.dir\\Debug\\\\" /Fd"cmTC_c813e.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-es4vjp\\Debug\\cmTC_50c4b.exe" /INCREMENTAL /ILK:"cmTC_50c4b.dir\\Debug\\cmTC_50c4b.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-es4vjp/Debug/cmTC_50c4b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-es4vjp/Debug/cmTC_50c4b.lib" /MACHINE:X64  /machine:x64 cmTC_50c4b.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_50c4b.vcxproj -> C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-es4vjp\\Debug\\cmTC_50c4b.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17e6h\\Debug\\cmTC_c813e.exe" /INCREMENTAL /ILK:"cmTC_c813e.dir\\Debug\\cmTC_c813e.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-e17e6h/Debug/cmTC_c813e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-e17e6h/Debug/cmTC_c813e.lib" /MACHINE:X64  /machine:x64 cmTC_c813e.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_c813e.vcxproj -> C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17e6h\\Debug\\cmTC_c813e.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_50c4b.dir\\Debug\\cmTC_50c4b.tlog\\unsuccessfulbuild".
-          Touching "cmTC_50c4b.dir\\Debug\\cmTC_50c4b.tlog\\cmTC_50c4b.lastbuildstate".
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-es4vjp\\cmTC_50c4b.vcxproj" (default targets).
+          Deleting file "cmTC_c813e.dir\\Debug\\cmTC_c813e.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c813e.dir\\Debug\\cmTC_c813e.tlog\\cmTC_c813e.lastbuildstate".
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-e17e6h\\cmTC_c813e.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.44
+        Time Elapsed 00:00:00.38
         
       exitCode: 0
   -
@@ -1006,8 +1117,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-r60fr2"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-r60fr2"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-dvcaf3"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-dvcaf3"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1018,39 +1129,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-r60fr2'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-dvcaf3'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4ca5d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e94ff.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:20.
+        Build started 06-07-2026 17:57:35.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r60fr2\\cmTC_4ca5d.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dvcaf3\\cmTC_e94ff.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r60fr2\\Debug\\".
-          Creating directory "cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dvcaf3\\Debug\\".
+          Creating directory "cmTC_e94ff.dir\\Debug\\cmTC_e94ff.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.tlog\\unsuccessfulbuild".
+          Creating "cmTC_e94ff.dir\\Debug\\cmTC_e94ff.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e94ff.dir\\Debug\\cmTC_e94ff.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_4ca5d.dir\\Debug\\\\" /Fd"cmTC_4ca5d.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_e94ff.dir\\Debug\\\\" /Fd"cmTC_e94ff.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_4ca5d.dir\\Debug\\\\" /Fd"cmTC_4ca5d.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /Fo"cmTC_e94ff.dir\\Debug\\\\" /Fd"cmTC_e94ff.dir\\Debug\\vc145.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.3\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r60fr2\\Debug\\cmTC_4ca5d.exe" /INCREMENTAL /ILK:"cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-r60fr2/Debug/cmTC_4ca5d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-r60fr2/Debug/cmTC_4ca5d.lib" /MACHINE:X64  /machine:x64 cmTC_4ca5d.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_4ca5d.vcxproj -> C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r60fr2\\Debug\\cmTC_4ca5d.exe
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dvcaf3\\Debug\\cmTC_e94ff.exe" /INCREMENTAL /ILK:"cmTC_e94ff.dir\\Debug\\cmTC_e94ff.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-dvcaf3/Debug/cmTC_e94ff.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-dvcaf3/Debug/cmTC_e94ff.lib" /MACHINE:X64  /machine:x64 cmTC_e94ff.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e94ff.vcxproj -> C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dvcaf3\\Debug\\cmTC_e94ff.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.tlog\\unsuccessfulbuild".
-          Touching "cmTC_4ca5d.dir\\Debug\\cmTC_4ca5d.tlog\\cmTC_4ca5d.lastbuildstate".
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-r60fr2\\cmTC_4ca5d.vcxproj" (default targets).
+          Deleting file "cmTC_e94ff.dir\\Debug\\cmTC_e94ff.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e94ff.dir\\Debug\\cmTC_e94ff.tlog\\cmTC_e94ff.lastbuildstate".
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dvcaf3\\cmTC_e94ff.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.47
+        Time Elapsed 00:00:00.38
         
       exitCode: 0
   -
@@ -1093,8 +1204,8 @@ events:
     checks:
       - "Performing Test COMPILER_HAS_THOSE_TOGGLES"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-ju52si"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-ju52si"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-w3gcn6"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-w3gcn6"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
@@ -1104,38 +1215,38 @@ events:
       variable: "COMPILER_HAS_THOSE_TOGGLES"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-ju52si'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-w3gcn6'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_cd1dc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a9c4c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:27.
+        Build started 06-07-2026 17:57:48.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\cmTC_cd1dc.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\cmTC_a9c4c.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\Debug\\".
-          Creating directory "cmTC_cd1dc.dir\\Debug\\cmTC_cd1dc.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\Debug\\".
+          Creating directory "cmTC_a9c4c.dir\\Debug\\cmTC_a9c4c.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_cd1dc.dir\\Debug\\cmTC_cd1dc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_cd1dc.dir\\Debug\\cmTC_cd1dc.tlog\\unsuccessfulbuild".
+          Creating "cmTC_a9c4c.dir\\Debug\\cmTC_a9c4c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_a9c4c.dir\\Debug\\cmTC_a9c4c.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_cd1dc.dir\\Debug\\\\" /Fd"cmTC_cd1dc.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue  -Werror=pointer-arith "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a9c4c.dir\\Debug\\\\" /Fd"cmTC_a9c4c.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue  -Werror=pointer-arith "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_cd1dc.dir\\Debug\\\\" /Fd"cmTC_cd1dc.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue  -Werror=pointer-arith "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\src.c"
-        cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\cmTC_cd1dc.vcxproj]
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\cmTC_cd1dc.vcxproj" (default targets) -- FAILED.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D COMPILER_HAS_THOSE_TOGGLES /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_a9c4c.dir\\Debug\\\\" /Fd"cmTC_a9c4c.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue  -Werror=pointer-arith "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\src.c"
+        cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\cmTC_a9c4c.vcxproj]
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\cmTC_a9c4c.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\cmTC_cd1dc.vcxproj" (default target) (1) ->
+        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\cmTC_a9c4c.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ju52si\\cmTC_cd1dc.vcxproj]
+          cl : command line  error D8021: invalid numeric argument '/Werror=pointer-arith' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-w3gcn6\\cmTC_a9c4c.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.28
+        Time Elapsed 00:00:00.24
         
       exitCode: 1
   -
@@ -1149,8 +1260,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-i6hygx"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-i6hygx"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-j8pmb9"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-j8pmb9"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
@@ -1160,39 +1271,39 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-i6hygx'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-j8pmb9'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_c3eb6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_62225.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:28.
+        Build started 06-07-2026 17:57:49.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\cmTC_c3eb6.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\cmTC_62225.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\Debug\\".
-          Creating directory "cmTC_c3eb6.dir\\Debug\\cmTC_c3eb6.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\Debug\\".
+          Creating directory "cmTC_62225.dir\\Debug\\cmTC_62225.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_c3eb6.dir\\Debug\\cmTC_c3eb6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_c3eb6.dir\\Debug\\cmTC_c3eb6.tlog\\unsuccessfulbuild".
+          Creating "cmTC_62225.dir\\Debug\\cmTC_62225.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_62225.dir\\Debug\\cmTC_62225.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c3eb6.dir\\Debug\\\\" /Fd"cmTC_c3eb6.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_62225.dir\\Debug\\\\" /Fd"cmTC_62225.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_c3eb6.dir\\Debug\\\\" /Fd"cmTC_c3eb6.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\src.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_62225.dir\\Debug\\\\" /Fd"cmTC_62225.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\src.c"
           src.c
-        C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\cmTC_c3eb6.vcxproj]
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\cmTC_c3eb6.vcxproj" (default targets) -- FAILED.
+        C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\cmTC_62225.vcxproj]
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\cmTC_62225.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\cmTC_c3eb6.vcxproj" (default target) (1) ->
+        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\cmTC_62225.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-i6hygx\\cmTC_c3eb6.vcxproj]
+          C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-j8pmb9\\cmTC_62225.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.30
+        Time Elapsed 00:00:00.25
         
       exitCode: 1
   -
@@ -1205,8 +1316,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-geda1n"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-geda1n"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-u223fg"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-u223fg"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
@@ -1217,41 +1328,41 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-geda1n'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-u223fg'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_09b16.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bfac7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:28.
+        Build started 06-07-2026 17:57:49.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\cmTC_09b16.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\cmTC_bfac7.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\Debug\\".
-          Creating directory "cmTC_09b16.dir\\Debug\\cmTC_09b16.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\Debug\\".
+          Creating directory "cmTC_bfac7.dir\\Debug\\cmTC_bfac7.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_09b16.dir\\Debug\\cmTC_09b16.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_09b16.dir\\Debug\\cmTC_09b16.tlog\\unsuccessfulbuild".
+          Creating "cmTC_bfac7.dir\\Debug\\cmTC_bfac7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_bfac7.dir\\Debug\\cmTC_bfac7.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_09b16.dir\\Debug\\\\" /Fd"cmTC_09b16.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_bfac7.dir\\Debug\\\\" /Fd"cmTC_bfac7.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_09b16.dir\\Debug\\\\" /Fd"cmTC_09b16.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_bfac7.dir\\Debug\\\\" /Fd"cmTC_bfac7.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\Debug\\cmTC_09b16.exe" /INCREMENTAL /ILK:"cmTC_09b16.dir\\Debug\\cmTC_09b16.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-geda1n/Debug/cmTC_09b16.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-geda1n/Debug/cmTC_09b16.lib" /MACHINE:X64  /machine:x64 cmTC_09b16.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\cmTC_09b16.vcxproj]
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\cmTC_09b16.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\Debug\\cmTC_bfac7.exe" /INCREMENTAL /ILK:"cmTC_bfac7.dir\\Debug\\cmTC_bfac7.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-u223fg/Debug/cmTC_bfac7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-u223fg/Debug/cmTC_bfac7.lib" /MACHINE:X64  /machine:x64 cmTC_bfac7.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\cmTC_bfac7.vcxproj]
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\cmTC_bfac7.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\cmTC_09b16.vcxproj" (default target) (1) ->
+        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\cmTC_bfac7.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-geda1n\\cmTC_09b16.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u223fg\\cmTC_bfac7.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.37
+        Time Elapsed 00:00:00.28
         
       exitCode: 1
   -
@@ -1264,8 +1375,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-2sanwo"
-      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-2sanwo"
+      source: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-f5ka6p"
+      binary: "C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-f5ka6p"
     cmakeVariables:
       CMAKE_CXX_STDLIB_MODULES_JSON: ""
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
@@ -1276,41 +1387,41 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-2sanwo'
+        Change Dir: 'C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-f5ka6p'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2db87.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fdecc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=18.0 /v:n
         MSBuild version 18.7.8+1ac568fee for .NET Framework
-        Build started 28-06-2026 10:01:29.
+        Build started 06-07-2026 17:57:50.
         
-        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\cmTC_2db87.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\cmTC_fdecc.vcxproj" on node 1 (default targets).
         PrepareForBuild:
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\Debug\\".
-          Creating directory "cmTC_2db87.dir\\Debug\\cmTC_2db87.tlog\\".
+          Creating directory "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\Debug\\".
+          Creating directory "cmTC_fdecc.dir\\Debug\\cmTC_fdecc.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_2db87.dir\\Debug\\cmTC_2db87.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_2db87.dir\\Debug\\cmTC_2db87.tlog\\unsuccessfulbuild".
+          Creating "cmTC_fdecc.dir\\Debug\\cmTC_fdecc.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_fdecc.dir\\Debug\\cmTC_fdecc.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2db87.dir\\Debug\\\\" /Fd"cmTC_2db87.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_fdecc.dir\\Debug\\\\" /Fd"cmTC_fdecc.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.51.36248 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_2db87.dir\\Debug\\\\" /Fd"cmTC_2db87.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\CheckFunctionExists.c"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_fdecc.dir\\Debug\\\\" /Fd"cmTC_fdecc.dir\\Debug\\vc145.pdb" /external:W1 /TC /errorReport:queue "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\Debug\\cmTC_2db87.exe" /INCREMENTAL /ILK:"cmTC_2db87.dir\\Debug\\cmTC_2db87.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-2sanwo/Debug/cmTC_2db87.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-2sanwo/Debug/cmTC_2db87.lib" /MACHINE:X64  /machine:x64 cmTC_2db87.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\cmTC_2db87.vcxproj]
-        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\cmTC_2db87.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\Debug\\cmTC_fdecc.exe" /INCREMENTAL /ILK:"cmTC_fdecc.dir\\Debug\\cmTC_fdecc.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-f5ka6p/Debug/cmTC_fdecc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/aryan/OneDrive/Desktop/Projects/Aetheris/build/CMakeFiles/CMakeScratch/TryCompile-f5ka6p/Debug/cmTC_fdecc.lib" /MACHINE:X64  /machine:x64 cmTC_fdecc.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\cmTC_fdecc.vcxproj]
+        Done Building Project "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\cmTC_fdecc.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\cmTC_2db87.vcxproj" (default target) (1) ->
+        "C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\cmTC_fdecc.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-2sanwo\\cmTC_2db87.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\aryan\\OneDrive\\Desktop\\Projects\\Aetheris\\build\\CMakeFiles\\CMakeScratch\\TryCompile-f5ka6p\\cmTC_fdecc.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.39
+        Time Elapsed 00:00:00.28
         
       exitCode: 1
 ...

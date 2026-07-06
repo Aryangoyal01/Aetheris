@@ -113,6 +113,10 @@ void GPUParticleBuffer::Create(size_t capacity)
     Log::Info(msgSize.c_str());
     Log::Info(msgCap.c_str());
     Log::Info("Upload System Ready");
+    
+    // Explicitly zero-initialize the buffer to prevent rendering artifacts from 
+    // uninitialized GPU memory when the compute shader or renderer accesses it.
+    Clear();
 }
 
 void GPUParticleBuffer::Destroy()
@@ -189,6 +193,12 @@ void GPUParticleBuffer::Upload(const ParticleSystem& particleSystem)
     m_uploadedCount = count;
 }
 
+void GPUParticleBuffer::UploadFull(const ParticleSystem& particleSystem)
+{
+    m_uploadedCount = 0;
+    Upload(particleSystem);
+}
+
 void GPUParticleBuffer::Download(std::vector<GPUParticle>& outParticles)
 {
     if (m_ssbo == 0) return;
@@ -204,6 +214,25 @@ void GPUParticleBuffer::Download(std::vector<GPUParticle>& outParticles)
     {
         glBindBuffer(GL_SHADER_STORAGE_BUFFER, m_ssbo);
         glGetBufferSubData(GL_SHADER_STORAGE_BUFFER, 0, bufferSize, outParticles.data());
+        glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
+    }
+}
+
+void GPUParticleBuffer::Clear()
+{
+    m_uploadedCount = 0;
+    if (m_ssbo == 0) return;
+    
+    // Clear buffer memory
+    std::vector<GPUParticle> empty(m_capacity, GPUParticle{});
+    if (glNamedBufferSubData)
+    {
+        glNamedBufferSubData(m_ssbo, 0, m_capacity * sizeof(GPUParticle), empty.data());
+    }
+    else if (glBindBuffer && glBufferSubData)
+    {
+        glBindBuffer(GL_SHADER_STORAGE_BUFFER, m_ssbo);
+        glBufferSubData(GL_SHADER_STORAGE_BUFFER, 0, m_capacity * sizeof(GPUParticle), empty.data());
         glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
     }
 }

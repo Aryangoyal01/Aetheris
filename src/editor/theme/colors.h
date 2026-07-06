@@ -26,6 +26,7 @@ namespace Colors {
     constexpr ImVec4 AccentCyanDim    = ImVec4(0.10f, 0.65f, 0.70f, 1.0f);
     constexpr ImVec4 AccentCyanFaded  = ImVec4(0.15f, 0.85f, 0.90f, 0.15f);
     constexpr ImVec4 AccentPurple     = ImVec4(0.65f, 0.35f, 0.90f, 1.0f);
+    constexpr ImVec4 AccentPurpleBright = ImVec4(0.80f, 0.50f, 1.00f, 1.0f);
     constexpr ImVec4 AccentPurpleDim  = ImVec4(0.50f, 0.25f, 0.70f, 1.0f);
     constexpr ImVec4 AccentPurpleFaded= ImVec4(0.65f, 0.35f, 0.90f, 0.12f);
 
@@ -34,6 +35,7 @@ namespace Colors {
     constexpr ImVec4 SuccessDim       = ImVec4(0.15f, 0.65f, 0.35f, 1.0f);
     constexpr ImVec4 Warning          = ImVec4(0.95f, 0.75f, 0.20f, 1.0f);
     constexpr ImVec4 WarningDim       = ImVec4(0.75f, 0.58f, 0.15f, 1.0f);
+    constexpr ImVec4 Orange           = ImVec4(0.95f, 0.55f, 0.15f, 1.0f);
     constexpr ImVec4 Error            = ImVec4(0.95f, 0.30f, 0.35f, 1.0f);
     constexpr ImVec4 ErrorDim         = ImVec4(0.75f, 0.22f, 0.27f, 1.0f);
     constexpr ImVec4 Info             = ImVec4(0.20f, 0.85f, 0.90f, 1.0f);

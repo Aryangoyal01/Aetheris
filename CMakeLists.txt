@@ -37,6 +37,7 @@ add_executable(${PROJECT_NAME}
     src/rendering/gpu/gpu_particle_buffer.cpp
     src/viewport/viewport.cpp
     src/spawning/spawn_system.cpp
+    src/simulation/cpu_simulation.cpp
     
     # Editor
     src/editor/theme/theme.cpp

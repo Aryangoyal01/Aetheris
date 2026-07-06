@@ -116,13 +116,14 @@ void Application::Initialize()
     }
     
     // Initialize GPU Particle Buffer
-    m_particleBuffer.Create(m_settings.maxParticles);
+    m_currentMaxParticles = m_settings.maxParticles;
+    m_particleBuffer.Create(m_currentMaxParticles);
 
     // Initialize GPU Renderer
     m_renderer.Initialize();
     
     // Initialize Editor
-    m_editor.Initialize(&m_renderer, &m_viewport);
+    m_editor.Initialize(&m_renderer, &m_viewport, &m_settings);
 
     Log::Info("Aetheris initialized successfully");
 }
@@ -135,11 +136,29 @@ void Application::Run()
     while (!WindowShouldClose())
     {
         Time::Update(GetFrameTime());
+
+        if (m_currentMaxParticles != m_settings.maxParticles)
+        {
+            m_currentMaxParticles = m_settings.maxParticles;
+            auto& particles = m_world.GetParticleSystem().GetParticles();
+            
+            // If shrinking below current active count, resize CPU buffer
+            if (particles.size() > m_currentMaxParticles)
+            {
+                particles.resize(m_currentMaxParticles);
+            }
+            particles.shrink_to_fit();
+
+            m_particleBuffer.Destroy();
+            m_particleBuffer.Create(m_currentMaxParticles);
+            m_particleBuffer.UploadFull(m_world.GetParticleSystem());
+        }
         Input::Update();
 
         BeginDrawing();
         ClearBackground(BLACK);
 
+        m_editor.SetTelemetry(GetFPS(), Time::DeltaTime() * 1000.0f, 0.0f, m_world.GetParticleSystem().ParticleCount());
         m_editor.BeginFrame();
 
         // Window resize is now handled via ViewportPanel sending size back to Renderer/Viewport
@@ -180,36 +199,87 @@ void Application::Run()
         
         SpawnRequest req;
         req.position = worldPos;
-        req.velocity = { 0.0f, 0.0f };
+        req.velocity = { m_settings.defaultVelocity[0], m_settings.defaultVelocity[1] };
         req.radius = m_settings.defaultRadius;
         req.lifetime = m_settings.defaultLifetime;
         req.color = WHITE;
 
         m_spawnSystem.Update(m_world, Time::DeltaTime(), isPressed, isDown, req, m_settings);
 
-        // GPU Upload
-        m_particleBuffer.Upload(m_world.GetParticleSystem());
-
-        // Compute Shader Execution
-        m_computeShader.Bind();
-        m_particleBuffer.Bind(0); // Bind SSBO to binding index 0
-
-        // Set Uniforms
-        m_computeShader.SetUniformFloat("u_deltaTime", Time::DeltaTime());
-        m_computeShader.SetUniformFloat("u_gravity", m_settings.gravity);
-        m_computeShader.SetUniformFloat("u_restitution", m_settings.restitution);
-        m_computeShader.SetUniformInt("u_collisionMode", static_cast<int>(m_settings.collisionMode));
-        m_computeShader.SetUniformVec4("u_bounds", World::BOUNDS_LEFT, World::BOUNDS_RIGHT, World::BOUNDS_BOTTOM, World::BOUNDS_TOP);
-
-        // Dispatch enough workgroups to cover all particles (64 threads per workgroup)
-        uint32_t groupX = (m_settings.maxParticles + 63) / 64;
-        m_computeShader.Dispatch(groupX, 1, 1);
-        
-        if (s_glMemoryBarrier)
+        if (m_editor.ConsumeClearParticlesRequest())
         {
-            s_glMemoryBarrier(0xFFFFFFFF); // GL_ALL_BARRIER_BITS
+            m_world.GetParticleSystem().Clear();
+            m_particleBuffer.Clear();
         }
-        rlDisableShader(); // Unbind compute shader
+
+        if (m_editor.ConsumeSyncRequest() && m_settings.useComputeShader)
+        {
+            std::vector<GPUParticle> gpuData;
+            m_particleBuffer.Download(gpuData);
+            
+            auto& cpuParticles = m_world.GetParticleSystem().GetParticles();
+            cpuParticles.clear();
+            for (size_t i = 0; i < m_particleBuffer.Capacity(); ++i)
+            {
+                if (gpuData[i].isActive)
+                {
+                    Particle p;
+                    p.position = gpuData[i].position;
+                    p.velocity = gpuData[i].velocity;
+                    p.lifetime = gpuData[i].lifetime;
+                    p.maxLifetime = gpuData[i].maxLifetime;
+                    p.size = gpuData[i].size;
+                    p.active = true;
+                    
+                    uint32_t c = gpuData[i].color;
+                    p.r = static_cast<unsigned char>(c & 0xFF);
+                    p.g = static_cast<unsigned char>((c >> 8) & 0xFF);
+                    p.b = static_cast<unsigned char>((c >> 16) & 0xFF);
+                    p.a = static_cast<unsigned char>((c >> 24) & 0xFF);
+                    
+                    cpuParticles.push_back(p);
+                }
+            }
+            m_particleBuffer.UploadFull(m_world.GetParticleSystem());
+        }
+
+        // Compute or CPU Simulation
+        if (m_settings.useComputeShader)
+        {
+            m_particleBuffer.Upload(m_world.GetParticleSystem());
+
+            if (m_settings.state == SimulationState::Play)
+            {
+                m_computeShader.Bind();
+
+                float subDt = Time::DeltaTime() / m_settings.substeps;
+                
+                for (int step = 0; step < m_settings.substeps; ++step)
+                {
+                    m_particleBuffer.Bind(0);
+
+                    m_computeShader.SetUniformFloat("u_deltaTime", subDt);
+                    m_computeShader.SetUniformFloat("u_gravity", m_settings.gravity);
+                    m_computeShader.SetUniformFloat("u_restitution", m_settings.restitution);
+                    m_computeShader.SetUniformInt("u_collisionMode", static_cast<int>(m_settings.collisionMode));
+                    m_computeShader.SetUniformVec4("u_bounds", World::BOUNDS_LEFT, World::BOUNDS_RIGHT, World::BOUNDS_BOTTOM, World::BOUNDS_TOP);
+
+                    uint32_t groupX = (m_settings.maxParticles + 63) / 64;
+                    m_computeShader.Dispatch(groupX, 1, 1);
+                    
+                    if (s_glMemoryBarrier)
+                    {
+                        s_glMemoryBarrier(0xFFFFFFFF);
+                    }
+                }
+                rlDisableShader();
+            }
+        }
+        else
+        {
+            m_cpuSimulation.Update(m_world, Time::DeltaTime(), m_settings);
+            m_particleBuffer.UploadFull(m_world.GetParticleSystem());
+        }
 
         // Render
         m_renderer.BeginFrame();

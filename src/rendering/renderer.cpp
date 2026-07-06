@@ -80,6 +80,10 @@ void Renderer::RenderParticles(uint32_t particleCount)
     if (!m_viewport || m_shaderId == 0 || particleCount == 0) return;
     if (!glDrawElementsInstanced) return;
 
+    // Flush any pending raylib batched geometry (e.g. from GridRenderer) 
+    // before we change OpenGL state for raw instanced rendering.
+    rlDrawRenderBatchActive();
+
     // Use our custom shader
     rlEnableShader(m_shaderId);
 

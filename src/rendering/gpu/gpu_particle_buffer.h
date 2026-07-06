@@ -52,8 +52,11 @@ public:
     void Create(size_t capacity);
     void Destroy();
     void Upload(const ParticleSystem& particleSystem);
+    void UploadFull(const ParticleSystem& particleSystem);
     void Download(std::vector<GPUParticle>& outParticles);
     void Bind(uint32_t bindingIndex);
+    
+    void Clear();
     
     size_t Capacity() const;
 

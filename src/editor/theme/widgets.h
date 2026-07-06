@@ -6,6 +6,9 @@
 namespace Theme {
 namespace Widgets {
 
+    // Helper to format large numbers with commas
+    std::string FormatNumber(uint32_t value);
+
     // A unified button for the floating toolbar and top toolbar
     bool ToolbarButton(const char* id, const char* label, bool isActive = false, ImVec2 size = ImVec2(0, 0));
 
@@ -33,12 +36,14 @@ namespace Widgets {
     // A dropdown selector
     void PropertyDropdown(const char* label, const char* value);
 
-    // A 3-component vector input row (X, Y, Z)
     void Vector2Property(const char* label, const char* x, const char* y);
     void Vector3Property(const char* label, const char* x, const char* y, const char* z);
 
+    // A fully featured Vector2 property with Cartesian and Polar editing, and an interactive gizmo
+    bool Vector2Control(const char* label, float* v, float resetValue = 0.0f, bool disabled = false);
+
     // A quick action button with icon
-    bool QuickAction(const char* id, const char* icon, const char* label, ImVec2 size = ImVec2(0, 0));
+    bool QuickAction(const char* id, const char* icon, const char* label, ImVec2 size = ImVec2(0, 0), bool isPrimary = true);
 
     // A console log entry with timestamp and severity badge
     void ConsoleEntry(const char* timestamp, const char* severity, ImVec4 severityColor, const char* message, ImFont* badgeFont = nullptr);

@@ -15,10 +15,13 @@ public:
     Editor();
     ~Editor();
 
-    void Initialize(Renderer* renderer, Viewport* viewport);
+    void Initialize(Renderer* renderer, Viewport* viewport, SimulationSettings* settings);
     void BeginFrame();
     void Update();
     void EndFrame();
+    void SetTelemetry(int fps, float frameTimeMs, float gpuTimeMs, int particleCount);
+    bool ConsumeClearParticlesRequest();
+    bool ConsumeSyncRequest();
     // Viewport State Routing
     bool IsViewportHovered() const;
     Point2 GetViewportLocalMouse() const;
