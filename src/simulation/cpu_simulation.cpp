@@ -24,7 +24,8 @@ void CPUSimulation::Update(World& world, float deltaTime, const SimulationSettin
                 continue;
             }
             
-            p.velocity.y += settings.gravity * subDt;
+            p.velocity.x += settings.gravity[0] * subDt;
+            p.velocity.y += settings.gravity[1] * subDt;
             
             p.position.x += p.velocity.x * subDt;
             p.position.y += p.velocity.y * subDt;

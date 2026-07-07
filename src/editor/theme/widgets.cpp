@@ -407,7 +407,7 @@ namespace Widgets {
     // ============================================================
     // Vector2Control - Generic Cartesian/Polar control with Gizmo
     // ============================================================
-    bool Vector2Control(const char* label, float* v, float resetValue, bool disabled)
+    bool Vector2Control(const char* label, float* v, float resetValue, bool disabled, const char* unit)
     {
         bool changed = false;
         ImGui::PushID(label);
@@ -481,8 +481,10 @@ namespace Widgets {
             if (ImGui::DragFloat("##x", &valX, 0.1f, 0.0f, 0.0f, "%.3f")) { v[0] = valX; changed = true; }
             ImGui::PopStyleVar();
             ImGui::PopItemWidth();
-            ImGui::SameLine(0, 12.0f);
-            ImGui::TextColored(Colors::TextDim, "m/s");
+            if (unit && unit[0] != '\0') {
+                ImGui::SameLine(0, 12.0f);
+                ImGui::TextColored(Colors::TextDim, "%s", unit);
+            }
             
             ImGui::Dummy(ImVec2(0, 12.0f));
             
@@ -494,8 +496,10 @@ namespace Widgets {
             if (ImGui::DragFloat("##y", &valY, 0.1f, 0.0f, 0.0f, "%.3f")) { v[1] = valY; changed = true; }
             ImGui::PopStyleVar();
             ImGui::PopItemWidth();
-            ImGui::SameLine(0, 12.0f);
-            ImGui::TextColored(Colors::TextDim, "m/s");
+            if (unit && unit[0] != '\0') {
+                ImGui::SameLine(0, 12.0f);
+                ImGui::TextColored(Colors::TextDim, "%s", unit);
+            }
             
             ImGui::EndDisabled();
             ImGui::EndGroup();
@@ -534,8 +538,10 @@ namespace Widgets {
             }
             ImGui::PopStyleVar();
             ImGui::PopItemWidth();
-            ImGui::SameLine(0, 12.0f);
-            ImGui::TextColored(Colors::TextDim, "m/s");
+            if (unit && unit[0] != '\0') {
+                ImGui::SameLine(0, 12.0f);
+                ImGui::TextColored(Colors::TextDim, "%s", unit);
+            }
             
             ImGui::Dummy(ImVec2(0, 12.0f));
             
@@ -732,46 +738,7 @@ namespace Widgets {
     // ============================================================
     // Vector3Property - X Y Z inputs in a row
     // ============================================================
-    void Vector2Property(const char* label, const char* x, const char* y)
-    {
-        float availW = ImGui::GetContentRegionAvail().x;
-        float labelW = availW * 0.38f;
-        float fieldW = (availW - labelW - Metrics::Spacing8) / 2.0f;
-
-        ImVec2 pos = ImGui::GetCursorScreenPos();
-        float rowH = Metrics::SidebarItemHeight * 0.72f;
-
-        ImVec2 labelSize = ImGui::CalcTextSize(label);
-        float textY = pos.y + (rowH - labelSize.y) * 0.5f;
-        ImDrawList* dl = ImGui::GetWindowDrawList();
-        dl->AddText(ImVec2(pos.x, textY), ImGui::GetColorU32(Colors::TextDim), label);
-
-        const char* components[2] = { x, y };
-        ImVec4 labelColors[2] = { Colors::Error, Colors::Success };
-        const char* compLabels[2] = { "X", "Y" };
-
-        for (int i = 0; i < 2; i++) {
-            float fieldX = pos.x + labelW + (fieldW + Metrics::Spacing8) * i;
-            ImVec2 fieldMin = ImVec2(fieldX, pos.y + Metrics::Spacing4);
-            ImVec2 fieldMax = ImVec2(fieldX + fieldW, pos.y + rowH - Metrics::Spacing4);
-
-            dl->AddRectFilled(fieldMin, fieldMax, ImGui::GetColorU32(Colors::Surface), Radii::Input);
-
-            ImVec2 compSize = ImGui::CalcTextSize(components[i]);
-            float compY = fieldMin.y + ((fieldMax.y - fieldMin.y) - compSize.y) * 0.5f;
-
-            ImVec2 compLabelSize = ImGui::CalcTextSize(compLabels[i]);
-            dl->AddText(ImVec2(fieldMin.x + Metrics::Spacing6, compY),
-                ImGui::GetColorU32(labelColors[i]), compLabels[i]);
-
-            dl->AddText(ImVec2(fieldMin.x + Metrics::Spacing6 + compLabelSize.x + Metrics::Spacing6, compY),
-                ImGui::GetColorU32(Colors::Text), components[i]);
-        }
-
-        ImGui::Dummy(ImVec2(0, rowH));
-    }
-
-    void Vector3Property(const char* label, const char* x, const char* y, const char* z)
+    void Vector3Property(const char* label, const char* x, const char* y, const char* z, const char* unit)
     {
         float availW = ImGui::GetContentRegionAvail().x;
         float labelW = availW * 0.38f;

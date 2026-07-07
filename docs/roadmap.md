@@ -8,17 +8,18 @@
 
 # Project Progress
 
-| Milestone                                | Status     |
-| ---------------------------------------- | ---------- |
-| Foundation                               | ✅ Complete |
-| Workspace & Rendering                    | ✅ Complete |
-| Physics Simulation                       | ✅ Complete |
-| Professional Editor (UI Foundation v1.0) | ✅ Complete |
-| GPU Compute Pipeline                     | 🚧 Next    |
-| Scene & Asset System                     | ⏳ Planned  |
-| AI Integration                           | ⏳ Planned  |
-| Advanced Editor Tools                    | ⏳ Planned  |
-| Production Release                       | ⏳ Future   |
+| Milestone | Status |
+|-----------|--------|
+| Engine Foundation | ✅ Complete |
+| Interactive Workspace | ✅ Complete |
+| Physics Foundation | ✅ Complete |
+| Professional Editor (Checkpoint 2) | ✅ Complete |
+| GPU Compute Pipeline | ✅ Complete |
+| GPU Particle Systems | 🚧 Current |
+| Scene & Asset System | ⏳ Planned |
+| AI Integration | ⏳ Planned |
+| Advanced Editor & Engineering Tools | ⏳ Planned |
+| Production Release | ⏳ Future |
 
 ---
 
@@ -28,162 +29,220 @@ Established the core infrastructure required for the engine.
 
 Completed:
 
-* Application framework
-* Build system
-* Logging
-* Time management
-* Input system
-* Mathematical foundation
-* Documentation
+- Application framework
+- Build system
+- Logging
+- Time management
+- Input system
+- Math library
+- Documentation framework
 
 ---
 
 # ✅ Milestone 1 — Interactive Workspace
 
-Built the interactive 2D simulation environment.
+Built the interactive scientific workspace.
 
 Completed:
 
-* Cartesian workspace
-* Orthographic viewport
-* World ↔ Screen projection
-* Infinite grid
-* Camera controls
-* Particle visualization
+- Cartesian workspace
+- Orthographic viewport
+- Infinite engineering grid
+- Camera controls
+- Coordinate transformations
+- Particle visualization
 
 ---
 
 # ✅ Milestone 2 — Physics Foundation
 
-Implemented the reference CPU simulation.
+Implemented the deterministic CPU simulation used as the reference implementation.
 
 Completed:
 
-* World model
-* Particle system
-* Spawn system
-* Gravity
-* Collision handling
-* Simulation settings
-* Deterministic update loop
+- World model
+- Particle system
+- Spawn system
+- Gravity
+- Collision handling
+- Simulation settings
+- Deterministic fixed timestep
 
-This implementation serves as the correctness reference for future GPU execution.
+The CPU simulation remains the correctness reference for GPU validation.
 
 ---
 
-# ✅ Milestone 3 — Professional Editor (UI Foundation v1.0)
+# ✅ Milestone 3 — Professional Editor (Checkpoint 2)
 
-Transformed the engine into a professional desktop editor.
+Established a production-quality desktop editor.
 
 Completed:
 
-* Modern editor interface
-* Dockable workspace
-* Navigation rail
-* Inspector
-* Console
-* Toolbar
-* Status telemetry
-* Reusable design system
-* Custom editor widgets
+### Workspace
 
-The editor foundation is considered stable. Future UI work will be driven by new functionality rather than global redesigns.
+- Dockable layout
+- Fixed engineering workspace
+- Navigation rail
+- Toolbar
+- Status telemetry
+- Console
+
+### Inspector
+
+- Standardized property panels
+- Unified spacing and typography
+- Capacity visualization
+- Quick Actions
+- Reusable section layout
+
+### Widget System
+
+- Theme-driven UI framework
+- Reusable Vector2Control
+- Cartesian / Polar editing
+- Interactive direction dial
+- Shared property controls
+
+The editor architecture is now considered stable. Future UI work should primarily consist of extending existing reusable components rather than redesigning the interface.
 
 ---
 
-# 🚧 Milestone 4 — GPU Compute Pipeline
+# ✅ Milestone 4 — GPU Compute Pipeline
 
-Current Development Focus.
+Migrated the simulation pipeline to the GPU.
+
+Completed:
+
+- Compute shader framework
+- SSBO infrastructure
+- GPU particle storage
+- GPU simulation
+- GPU instanced rendering
+- CPU/GPU validation pipeline
+- Automatic high-performance GPU selection (Optimus / PowerXpress)
+
+The engine now executes its primary simulation entirely on the GPU while retaining the CPU implementation as a validation reference.
+
+---
+
+# 🚧 Milestone 5 — GPU Particle Systems
+
+**Current Development Focus**
 
 Objectives:
 
-* Compute shader framework
-* GPU particle storage (SSBO)
-* GPU simulation
-* GPU rendering
-* CPU/GPU validation
-* Fully GPU-native particle pipeline
+### Particle Emission
 
-The CPU implementation will remain available as a reference implementation.
+- Continuous high-rate spawning
+- Frame-rate independent emission
+- Burst emitters
+- Spawn accumulation
 
----
+### Particle Initialization
 
-# 📋 Milestone 5 — Scene & Editor Systems
+- Velocity distributions
+- Randomization
+- Spawn shapes
+- Initial rotation
+- Initial size
+- Initial lifetime
 
-Expand the editor into a complete content creation environment.
+### Simulation
 
-Planned systems:
+- Improved lifecycle management
+- Better GPU/CPU parity
+- Compute shader optimization
+- Higher particle counts
 
-* Scene hierarchy
-* Entity management
-* Asset browser
-* Material editor
-* Project serialization
-* Undo / Redo
-* Selection & Gizmos
+### Rendering
 
----
+- Better particle appearance
+- Color over lifetime
+- Size over lifetime
+- Additional rendering modes
 
-# 🤖 Milestone 6 — AI Integration
-
-Introduce AI as a native editor subsystem.
-
-Planned capabilities:
-
-* Natural language interaction
-* Scene generation
-* Parameter editing
-* Workflow automation
-* Intelligent editor assistance
-
-AI should operate through engine interfaces rather than direct subsystem manipulation.
+This milestone transforms the current simulation into a fully featured GPU-native particle system.
 
 ---
 
-# ⚡ Milestone 7 — Advanced Tooling
+# 📋 Milestone 6 — Scene & Asset System
 
-Expand Aetheris into a professional engineering platform.
+Expand Aetheris into a complete engineering editor.
 
-Planned systems:
+Planned:
 
-* Performance profiler
-* Timeline
-* Graph editor
-* Plugin framework
-* Python scripting
-* Networking
-* Remote control
-* Advanced debugging tools
-
----
-
-# 🌐 Milestone 8 — Natural Interaction
-
-Extend beyond traditional desktop interaction.
-
-Planned capabilities:
-
-* Hand tracking
-* Gesture recognition
-* Voice commands
-* Multi-modal workflows
-* XR exploration
+- Scene hierarchy
+- Entity management
+- Asset browser
+- Material editor
+- Project serialization
+- Undo / Redo
+- Selection tools
+- Transform gizmos
 
 ---
 
-# 🚀 Milestone 9 — Production Release
+# 🤖 Milestone 7 — AI Integration
 
-Prepare Aetheris for long-term use and public distribution.
+Introduce AI as a first-class editor subsystem.
+
+Planned:
+
+- Natural language editing
+- Scene generation
+- Parameter editing
+- Workflow automation
+- Intelligent engineering assistance
+
+AI should always interact through public engine interfaces rather than manipulating subsystems directly.
+
+---
+
+# ⚡ Milestone 8 — Advanced Engineering Tools
+
+Expand Aetheris into a professional scientific platform.
+
+Planned:
+
+- Performance profiler
+- GPU debugging tools
+- Timeline
+- Graph editor
+- Plugin framework
+- Python scripting
+- Networking
+- Remote control
+- Advanced diagnostics
+
+---
+
+# 🌐 Milestone 9 — Natural Interaction
+
+Extend beyond traditional desktop workflows.
+
+Planned:
+
+- Hand tracking
+- Gesture recognition
+- Voice commands
+- Multi-modal interaction
+- XR visualization
+
+---
+
+# 🚀 Milestone 10 — Production Release
+
+Prepare Aetheris for long-term public use.
 
 Objectives:
 
-* Performance optimization
-* Cross-platform support
-* Packaging
-* Automated testing
-* Documentation completion
-* Stable plugin ecosystem
-* Public releases
+- Performance optimization
+- Cross-platform support
+- Automated testing
+- Packaging
+- Documentation completion
+- Stable plugin ecosystem
+- Public releases
 
 ---
 
@@ -191,11 +250,12 @@ Objectives:
 
 Aetheris aims to become a professional GPU-native scientific simulation platform that combines:
 
-* High-performance particle simulation
-* Modern editor tooling
-* AI-assisted workflows
-* Advanced visualization
-* Natural interaction
-* Extensible architecture
+- High-performance simulation
+- GPU compute
+- Professional editor tooling
+- AI-assisted engineering workflows
+- Advanced visualization
+- Natural interaction
+- Extensible modular architecture
 
-Every milestone should strengthen the existing architecture rather than introduce unnecessary redesigns, ensuring the engine remains modular, maintainable, and scalable throughout its evolution.
+Every milestone should strengthen the existing architecture rather than introduce unnecessary redesigns. New systems should integrate into the established framework, preserving modularity, maintainability, and long-term scalability.

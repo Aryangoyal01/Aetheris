@@ -10,41 +10,42 @@
 
 # Overview
 
-Aetheris is a modular, GPU-oriented scientific simulation engine with an integrated editor.
+Aetheris is a modular, GPU-native scientific simulation platform with an integrated professional editor.
 
-The project is organized into independent subsystems that communicate through well-defined interfaces. Each subsystem owns a single responsibility and can evolve without tightly coupling to the rest of the engine.
+The engine is organized into independent subsystems that communicate through well-defined interfaces. Every subsystem owns a single responsibility and is designed to evolve independently without introducing unnecessary coupling.
 
-The architecture is designed for long-term scalability, allowing new features to be integrated without requiring major redesigns.
+The architecture prioritizes long-term scalability, deterministic behavior, reusable editor components, and GPU-first execution.
 
 ---
 
-# Core Architecture
+# High-Level Architecture
 
 ```text
-                  Application
-                       │
-        ┌──────────────┼──────────────┐
-        │              │              │
-      Editor        Engine         Platform
-                        │
-      ┌─────────────────┼─────────────────┐
-      │                 │                 │
-   Input            Simulation       Renderer
-      │                 │                 │
-      └──────────────┬──┴─────────────────┘
-                     │
-                  World
+                     Application
+                          │
+        ┌─────────────────┼─────────────────┐
+        │                 │                 │
+     Editor            Engine          Platform
+        │                 │                 │
+        │        ┌────────┴────────┐        │
+        │        │                 │        │
+      Theme   Simulation      Renderer   GPU Preference
+        │        │                 │
+        │        │                 │
+        └────────┴────────┬────────┘
+                          │
+                        World
 ```
 
-The **Application** coordinates subsystem lifetime but contains no simulation or rendering logic.
+The **Application** owns subsystem lifetime but contains no rendering or simulation logic.
 
-The **World** represents the shared state of the engine.
+The **World** remains the single source of truth shared by all runtime systems.
 
-Subsystems interact through the World or explicit interfaces rather than directly depending on one another.
+Subsystems communicate through public interfaces or the World rather than depending directly on one another.
 
 ---
 
-# Subsystems
+# Core Subsystems
 
 ## Application
 
@@ -52,65 +53,98 @@ Coordinates the engine lifecycle.
 
 Responsibilities:
 
-* Initialization
-* Main loop
-* Shutdown
-* Configuration
-* Subsystem ownership
+- Initialization
+- Main loop
+- Shutdown
+- Configuration
+- Subsystem ownership
 
 ---
 
 ## Editor
 
-Provides the user interface and editing environment.
+Provides the complete desktop editing environment.
 
 Responsibilities:
 
-* Dockspace
-* Viewport
-* Inspector
-* Console
-* Editor tools
-* User interaction
+- Dockspace
+- Viewport
+- Inspector
+- Console
+- Toolbar
+- Status telemetry
+- Quick Actions
+- User interaction
 
 The Editor never performs simulation or rendering itself.
 
 ---
 
+## Theme & Widgets
+
+Provides reusable editor UI components.
+
+Responsibilities:
+
+- Color palette
+- Typography
+- Layout metrics
+- Shared widgets
+- Property controls
+- Section headers
+- Vector2Control
+- Segmented controls
+
+Panels consume these widgets instead of implementing custom UI logic.
+
+This subsystem establishes a single visual language across the editor.
+
+---
+
 ## Input
 
-Collects user input from supported devices.
+Collects user input.
 
 Current:
 
-* Keyboard
-* Mouse
+- Keyboard
+- Mouse
 
 Planned:
 
-* Game controllers
-* Hand tracking
-* Voice input
+- Game controllers
+- Hand tracking
+- Voice input
 
-Input only reports state and never modifies the simulation directly.
+Input only reports state and never modifies simulation directly.
 
 ---
 
 ## World
 
-The World is the central data model.
+The World is the central runtime data model.
 
-It stores the current simulation state and acts as the single source of truth shared across the engine.
+It stores the complete simulation state and acts as the single source of truth shared by every runtime subsystem.
 
-Future systems such as entities, assets, and scene data will also be managed here.
+Future systems such as entities, assets, materials, and scene data will also be managed here.
 
 ---
 
 ## Simulation
 
-Updates the World according to the configured physics model.
+Responsible for updating the World.
 
-Its responsibility is to compute state changes only.
+Current architecture includes two implementations:
+
+### CPU Reference Simulation
+
+Used for correctness validation.
+
+### GPU Compute Simulation
+
+Primary runtime implementation using compute shaders and SSBOs.
+
+Simulation computes state only.
 
 It never performs rendering or UI operations.
 
@@ -120,99 +154,127 @@ It never performs rendering or UI operations.
 
 Visualizes the current World state.
 
-Responsibilities include:
+Responsibilities:
 
-* Particle rendering
-* Grid rendering
-* Debug visualization
-* Editor overlays
+- GPU particle rendering
+- Instanced rendering
+- Infinite grid
+- Debug visualization
+- Editor overlays
 
-The Renderer never modifies simulation data.
+Renderer never modifies simulation data.
+
+---
+
+## Platform
+
+Provides platform-specific integrations.
+
+Current responsibilities:
+
+- Window creation
+- OpenGL context
+- File system
+- Native platform services
+- High-performance GPU selection (Optimus / PowerXpress)
+
+Platform services remain isolated from engine logic.
 
 ---
 
 # Ownership Rules
 
-Each subsystem has explicit ownership.
+Each subsystem owns exactly one area of responsibility.
 
-| Subsystem   | Owns                   |
-| ----------- | ---------------------- |
-| Application | Subsystem lifetime     |
-| Editor      | User interface         |
-| Input       | Input state            |
-| World       | Shared simulation data |
-| Simulation  | World updates          |
-| Renderer    | Visualization          |
+| Subsystem | Owns |
+|------------|--------------------------------|
+| Application | Lifetime & initialization |
+| Editor | User interface |
+| Theme | UI appearance & reusable widgets |
+| Input | Input state |
+| World | Runtime simulation data |
+| Simulation | State updates |
+| Renderer | Visualization |
+| Platform | Platform integration |
 
 Ownership must remain unique.
 
-No subsystem should duplicate another subsystem's responsibility.
+Responsibilities should never overlap.
 
 ---
 
-# Dependency Principles
+# Dependency Rules
 
-Dependencies always flow in one direction.
+Dependencies always flow downward.
 
-Allowed:
+Allowed
 
-* Application → All subsystems
-* Editor → Engine interfaces
-* Simulation → World
-* Renderer → World
-* Input → Events
+- Application → All subsystems
+- Editor → Theme
+- Editor → Engine interfaces
+- Simulation → World
+- Renderer → World
+- Platform → OS APIs
 
-Forbidden:
+Forbidden
 
-* Renderer → Simulation
-* Simulation → Renderer
-* Renderer → Input
-* World → Renderer
-* Circular dependencies
+- Renderer → Simulation
+- Simulation → Renderer
+- World → Renderer
+- World → Editor
+- Theme → Panels
+- Circular dependencies
 
-Subsystems communicate through interfaces rather than direct coupling whenever practical.
+Communication should occur through public interfaces whenever practical.
 
 ---
 
-# Design Principles
+# Architectural Principles
 
-The architecture follows several core principles:
+The architecture follows several non-negotiable principles.
 
-* Single Responsibility
-* Explicit Ownership
-* Clear Dependency Direction
-* Modular Design
-* Separation of Engine and Editor
-* Data-Oriented Growth
-* GPU-Oriented Future Design
+- Single Responsibility
+- Explicit Ownership
+- Clear Dependency Direction
+- Modular Design
+- Separation of Engine and Editor
+- Reusable UI Components
+- Theme-Driven Editor
+- GPU-First Simulation
+- Deterministic Simulation
+- Data-Oriented Growth
 
-These principles take precedence over short-term implementation convenience.
+These principles take precedence over implementation convenience.
 
 ---
 
 # Extensibility
 
-The architecture is intentionally designed to accommodate future systems without structural redesign.
+The architecture is intentionally designed to grow without structural redesign.
 
 Planned additions include:
 
-* GPU Compute Pipeline
-* Scene Hierarchy
-* Asset Management
-* Material System
-* AI Assistant
-* Timeline
-* Performance Profiler
-* Plugin System
-* Hand Tracking
-* Voice Interaction
+- Advanced GPU particle systems
+- Scene hierarchy
+- Asset management
+- Material system
+- Serialization
+- AI assistant
+- Timeline
+- Performance profiler
+- Plugin framework
+- Python scripting
+- Hand tracking
+- Voice interaction
 
-New systems should integrate into the existing architecture rather than introducing new dependency patterns.
+New systems should integrate into existing architecture rather than introducing new dependency patterns.
 
 ---
 
 # Architecture Stability
 
-This document describes the intended long-term structure of Aetheris.
+The overall architecture is now considered stable following the completion of the Professional Editor and GPU Compute Pipeline milestones.
 
-Subsystem implementations will evolve over time, but the architectural philosophy and module boundaries should remain stable throughout the project's lifetime.
+Future work should extend existing systems rather than restructuring them.
+
+Large architectural changes should only occur when they provide substantial long-term benefits that cannot be achieved within the existing modular design.

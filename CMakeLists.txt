@@ -54,6 +54,7 @@ add_executable(${PROJECT_NAME}
 
     # Platform
     src/platform/dpi_aware.cpp
+    src/platform/gpu_preference.cpp
 
     # Third Party Dependencies
     third_party/imgui/imgui.cpp

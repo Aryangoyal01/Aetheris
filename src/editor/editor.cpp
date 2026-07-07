@@ -256,7 +256,7 @@ Point2 Editor::GetViewportLocalMouse() const
 
 void Editor::SetupDockspace()
 {
-    ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+    ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDocking;
     const ImGuiViewport* viewport = ImGui::GetMainViewport();
     float footerHeight = Theme::Metrics::FooterHeight;
     ImVec2 workSize = viewport->WorkSize;

@@ -36,11 +36,10 @@ namespace Widgets {
     // A dropdown selector
     void PropertyDropdown(const char* label, const char* value);
 
-    void Vector2Property(const char* label, const char* x, const char* y);
-    void Vector3Property(const char* label, const char* x, const char* y, const char* z);
+    void Vector3Property(const char* label, const char* x, const char* y, const char* z, const char* unit = nullptr);
 
     // A fully featured Vector2 property with Cartesian and Polar editing, and an interactive gizmo
-    bool Vector2Control(const char* label, float* v, float resetValue = 0.0f, bool disabled = false);
+    bool Vector2Control(const char* label, float* v, float resetValue = 0.0f, bool disabled = false, const char* unit = "");
 
     // A quick action button with icon
     bool QuickAction(const char* id, const char* icon, const char* label, ImVec2 size = ImVec2(0, 0), bool isPrimary = true);

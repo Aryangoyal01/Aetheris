@@ -20,7 +20,7 @@ layout(std430, binding = 0) buffer ParticleBuffer
 };
 
 uniform float u_deltaTime;
-uniform float u_gravity;
+uniform vec2 u_gravity;
 uniform float u_restitution;
 uniform int u_collisionMode; // 0 = None, 1 = Bounce, 2 = Wrap, 3 = Destroy
 uniform vec4 u_bounds; // x = left, y = right, z = bottom, w = top
@@ -50,7 +50,7 @@ void main()
     }
 
     // 3. velocity.y += gravity * deltaTime
-    particles[index].velocity.y += u_gravity * u_deltaTime;
+    particles[index].velocity += u_gravity * u_deltaTime;
 
     // 4. position += velocity * deltaTime
     particles[index].position.x += particles[index].velocity.x * u_deltaTime;

@@ -20,6 +20,7 @@ public:
     void Dispatch(uint32_t groupX, uint32_t groupY, uint32_t groupZ) const;
 
     void SetUniformFloat(const std::string& name, float value) const;
+    void SetUniformVec2(const std::string& name, float x, float y) const;
     void SetUniformInt(const std::string& name, int value) const;
     void SetUniformVec4(const std::string& name, float x, float y, float z, float w) const;
 

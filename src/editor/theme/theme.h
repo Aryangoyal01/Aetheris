@@ -7,7 +7,7 @@ namespace Theme {
         // Typography Sizing
         constexpr float FontSizeDefault = 26.0f;
         constexpr float FontSizeHeader  = 33.0f;
-        constexpr float FontSizeTitle   = 46.0f;
+        constexpr float FontSizeTitle   = 56.0f;
         constexpr float FontSizeCaption = 20.0f;
 
         // Mathematical Spacing Scale

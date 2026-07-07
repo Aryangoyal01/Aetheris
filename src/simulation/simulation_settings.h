@@ -23,7 +23,7 @@ struct SimulationSettings
     static constexpr uint32_t MIN_PARTICLES_LIMIT = 100;
     static constexpr uint32_t MAX_PARTICLES_LIMIT = 1000001;
 
-    float gravity = -50.0f;
+    float gravity[2] = {0.0f, -50.0f};
     float restitution = 0.8f;
     float spawnRate = 60.0f;
     float spawnHoldDelay = 0.2f;

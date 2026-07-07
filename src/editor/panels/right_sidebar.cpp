@@ -14,7 +14,7 @@ void RightSidebar::Render()
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(Theme::Metrics::Spacing20, Theme::Metrics::Spacing16));
     ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2(Theme::Metrics::Spacing12, Theme::Metrics::Spacing8));
 
-    ImGuiWindowFlags flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar;
+    ImGuiWindowFlags flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse;
 
     ImGui::SetNextWindowSizeConstraints(ImVec2(300, -1), ImVec2(520, -1));
     ImGui::Begin(m_name.c_str(), nullptr, flags);
@@ -26,7 +26,7 @@ void RightSidebar::Render()
         }
     };
 
-    float quickActionsH = 210.0f;
+    float quickActionsH = 305.0f;
     ImGui::BeginChild("InspectorContent", ImVec2(0, ImGui::GetContentRegionAvail().y - quickActionsH), false, ImGuiWindowFlags_None);
 
     switch (m_state->activeMode)
@@ -38,22 +38,8 @@ void RightSidebar::Render()
 
         if (Theme::Widgets::CollapsibleSection("grav", "GRAVITY", true, m_state->fontHeader)) {
             if (m_state->settings) {
-                float inputW = ImGui::GetContentRegionAvail().x * 0.7f;
-                ImGui::TextColored(Theme::Colors::TextDim, "Gravity");
-                ImGui::Dummy(ImVec2(0, 4.0f));
-                ImGui::PushItemWidth(inputW);
-                ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, ImVec2(ImGui::GetStyle().FramePadding.x, ImGui::GetStyle().FramePadding.y - 1.0f));
-                ImGui::BeginDisabled(isSim);
-                ImGui::DragFloat("##Gravity", &m_state->settings->gravity, 0.1f, -100.0f, 100.0f);
-                AddDisabledTooltip();
-                ImGui::EndDisabled();
-                ImGui::PopStyleVar();
-                ImGui::PopItemWidth();
-                ImGui::SameLine(0, 12.0f);
-                ImGui::TextColored(Theme::Colors::TextDim, "m/s²");
-                
-                ImGui::Dummy(ImVec2(0, Theme::Metrics::Spacing12));
-                Theme::Widgets::Vector2Property("Direction", "0.00", "-1.00");
+                ImGui::Dummy(ImVec2(0, Theme::Metrics::Spacing8));
+                Theme::Widgets::Vector2Control("Gravity", m_state->settings->gravity, 0.0f, isSim, "m/s²");
             }
         }
         ImGui::Dummy(ImVec2(0, Theme::Metrics::Spacing12));
@@ -360,7 +346,7 @@ void RightSidebar::Render()
         if (Theme::Widgets::CollapsibleSection("pvel", "VELOCITY", false, m_state->fontHeader)) {
             if (m_state->settings) {
                 ImGui::Dummy(ImVec2(0, 10.0f));
-                Theme::Widgets::Vector2Control("Speed", m_state->settings->defaultVelocity, 0.0f, isSim);
+                Theme::Widgets::Vector2Control("Speed", m_state->settings->defaultVelocity, 0.0f, isSim, "m/s");
             }
         }
         if (m_state->fontHeader) ImGui::PopFont();

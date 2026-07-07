@@ -259,7 +259,7 @@ void Application::Run()
                     m_particleBuffer.Bind(0);
 
                     m_computeShader.SetUniformFloat("u_deltaTime", subDt);
-                    m_computeShader.SetUniformFloat("u_gravity", m_settings.gravity);
+                    m_computeShader.SetUniformVec2("u_gravity", m_settings.gravity[0], m_settings.gravity[1]);
                     m_computeShader.SetUniformFloat("u_restitution", m_settings.restitution);
                     m_computeShader.SetUniformInt("u_collisionMode", static_cast<int>(m_settings.collisionMode));
                     m_computeShader.SetUniformVec4("u_bounds", World::BOUNDS_LEFT, World::BOUNDS_RIGHT, World::BOUNDS_BOTTOM, World::BOUNDS_TOP);
