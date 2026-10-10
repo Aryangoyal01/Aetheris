@@ -1,6 +1,6 @@
 #include "left_sidebar.h"
 #include "../editor_state.h"
-#include "../theme/colors.h"
+//#include "../theme/colors.h"
 #include <extras/IconsFontAwesome6.h>
 #include <imgui.h>
 #include "../theme/widgets.h"

@@ -65,6 +65,8 @@ Never introduce:
 * Magic numbers.
 * Temporary compatibility layers.
 
+All diagnostic logging must route through the centralized engine `Log` interface (`Log::Info`, `Log::Warning`, `Log::Error`, `Log::System`) to ensure synchronous delivery to both terminal streams and the live in-engine Developer Console. Direct `printf` calls in application or editor modules are strictly prohibited.
+
 If a system becomes obsolete, remove it instead of maintaining parallel implementations.
 
 ---

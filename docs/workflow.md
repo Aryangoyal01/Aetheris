@@ -58,6 +58,7 @@ Launch Aetheris and verify:
 * The new feature behaves as expected.
 * Existing functionality remains intact.
 * No visual regressions or crashes occur.
+* Verify engine startup logs and runtime telemetry within the Developer Console panel.
 
 ### 5. Review
 

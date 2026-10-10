@@ -70,13 +70,13 @@ Responsibilities:
 - Dockspace
 - Viewport
 - Inspector
-- Console
+- Developer Console (live log stream, severity badges, interactive command prompt)
 - Toolbar
 - Status telemetry
 - Quick Actions
 - User interaction
 
-The Editor never performs simulation or rendering itself.
+The Editor never performs simulation or rendering itself. All console and telemetry output flows through engine logging interfaces (`Log::Info/Warning/Error/System`).
 
 ---
 

@@ -19,13 +19,13 @@
 
 # Project Summary
 
-Aetheris is a modern **GPU-native scientific simulation platform** written in C++ using OpenGL, Raylib, and Dear ImGui.
+Aetheris is a **GPU-native scientific simulation platform focused on visualising physics, interactive experimentation, and eventual physics-problem solving**.
 
-The project combines a high-performance simulation engine with a professional desktop editor designed for interactive scientific visualization, experimentation, and future AI-assisted workflows.
+The project combines a high-performance simulation engine with a professional desktop engineering editor designed for real-time visualization, scientific experimentation, and analytical/numerical problem solving.
 
 It is **not** a game engine.
 
-Its primary goal is to become a modular engineering platform for real-time simulation, visualization, and scientific computing.
+The current particle engine and workspace form the computational foundation for interactive scientific physics modeling.
 
 ---
 
@@ -35,71 +35,49 @@ Its primary goal is to become a modular engineering platform for real-time simul
 
 **Current Milestone**
 
-**Checkpoint 3 — GPU Particle Simulation & Emission**
+**Milestone 5 — GPU Particle Systems & Physics Visualization Foundation**
 
-**Completed Milestones**
+**Completed / Verified Milestones**
 
-- ✅ Engine Foundation
-- ✅ Interactive Workspace
-- ✅ CPU Reference Simulation
-- ✅ GPU Compute Pipeline
-- ✅ Professional Editor UI (Checkpoint 2)
-
-The project has completed its editor foundation and GPU compute integration. Development is now focused on expanding simulation capabilities and particle behavior while preserving the established editor architecture.
-
----
-
-# Current Architecture
-
-The core architecture is considered stable.
-
-Major subsystems include:
-
-- Application
-- Editor
-- Theme & Widgets
-- Input
-- World
-- Spawn System
-- GPU Simulation
-- CPU Reference Simulation
-- Renderer
-- Viewport
-
-Subsystem responsibilities and dependencies are documented in `architecture.md`.
+- ✅ Engine Foundation [Verified]
+- ✅ Interactive Workspace [Verified]
+- ✅ CPU Reference Simulation [Verified]
+- ✅ GPU Compute Pipeline [Verified]
+- ✅ Professional Editor UI (Checkpoint 2) [Verified]
 
 ---
 
 # Current Engine Capabilities
 
-Implemented:
-
 ### Core Engine
 
-- Modular application framework
-- Deterministic update loop
-- CPU reference simulation
-- GPU compute simulation
-- SSBO-based particle storage
-- GPU instanced rendering
-- Automatic discrete GPU selection (Optimus / PowerXpress)
+- Modular application framework [Verified]
+- Deterministic update loop [Verified]
+- Continuous particle emission with sub-frame spatial interpolation [Verified in automated headless tests; Manually Verified in GUI]
+  *(Note: Spawning follows the CPU-side `SpawnSystem` → `World::ParticleSystem` → SSBO buffer upload path; it is not yet GPU-native compute emission. Known limitation: dead/inactive particles on the GPU remain represented in the CPU particle list and continue occupying capacity until an explicit CPU-GPU synchronization or compaction is performed. Delta time is clamped to 100 ms to intentionally limit catch-up emission bursts after large frame stalls)*
+- Centralized `Log` subsystem with thread-safe ring buffer and severity routing [Verified]
+- CPU reference simulation [Verified]
+- GPU compute simulation via OpenGL 4.3 compute shaders [Verified]
+- SSBO-based particle storage [Verified]
+- GPU instanced quad rendering [Verified]
+- Automatic discrete GPU preference exports [Verified on Windows runtime]
 
 ### Editor
 
-- Professional docked workspace
-- Fixed engineering layout
-- Modern theme system
-- Reusable UI widget library
-- Standardized property inspectors
-- Unified Vector2Control (Cartesian / Polar / Dial)
-- Physics inspector
-- Particle inspector
-- Console
-- Status telemetry
-- Camera controls
-- Quick Actions panel
+- Professional docked workspace [Verified]
+- Fixed engineering layout [Verified]
+- Modern theme system and reusable UI widget library [Verified]
+- Standardized property inspectors [Verified]
+- Unified Vector2Control (Cartesian / Polar / Dial) [Verified]
+- Physics and Particle inspectors [Verified]
+- Developer Console [Verified in automated test harness; Manually Verified in GUI]:
+  - Live engine log streaming with timestamps and severity badges (`INFO`, `WARN`, `ERROR`, `SYSTEM`) [Manually Verified in GUI]
+  - Interactive commands: `help`, `clear`, `clear particles`, `gravity <x> <y>`, `pause`, `play`, `sync`, `stats` (with GPU time displayed as `N/A (unmetered)`), `reset` [Manually Verified in GUI]
+  - Auto-scroll and manual scroll history [Manually Verified in GUI]
+- Status telemetry (FPS, frame time, particle count) [Verified]
+- Camera zoom/pan and Quick Actions panel [Verified]
 
-The CPU simulation remains the reference implementation for validation, while the GPU simulation is now the primary execution path.
+The CPU simulation remains the reference implementation for validation, while the GPU simulation is the primary execution path.
 
 ---
 
@@ -123,13 +101,14 @@ The following decisions are considered foundational and should not be changed wi
 
 Current focus:
 
-1. Continuous GPU particle spawning
-2. High-rate emission smoothing
-3. Improved particle lifecycle management
-4. Additional emitter shapes
-5. Velocity distributions and randomization
-6. GPU/CPU simulation parity
-7. Performance optimization
+1. GPU-native compute emitter kernels (true GPU-side particle allocation/emission).
+2. GPU dead-particle compaction / ring-buffer capacity reclamation (resolving CPU-side capacity retention of inactive particles).
+3. GPU timer queries for real-time GPU frame-time profiling (replacing unmetered GPU telemetry).
+4. Additional emitter shapes (disc, line, cone).
+5. Velocity distributions and randomization.
+6. Improved particle lifecycle management (color and size over lifetime).
+7. Physics problem solving operators (vector fields, energy conservation telemetry).
+8. GPU/CPU simulation parity.
 
 After simulation improvements:
 
@@ -138,7 +117,7 @@ After simulation improvements:
 - Material system
 - Serialization
 - Performance profiler
-- AI-assisted workflows
+- AI-assisted physics modeling workflows
 
 ---
 

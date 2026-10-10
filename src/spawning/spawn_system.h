@@ -15,4 +15,6 @@ private:
 
     float m_holdTimer = 0.0f;
     float m_spawnAccumulator = 0.0f;
+    Point2 m_prevPosition = { 0.0f, 0.0f };
+    bool m_hasPrevPosition = false;
 };

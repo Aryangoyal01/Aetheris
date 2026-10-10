@@ -85,7 +85,7 @@ Completed:
 - Navigation rail
 - Toolbar
 - Status telemetry
-- Console
+- Developer Console (live log streaming, severity badges, interactive command prompt) [Verified in automated tests; Manually Verified in GUI]
 
 ### Inspector
 
@@ -125,43 +125,39 @@ The engine now executes its primary simulation entirely on the GPU while retaini
 
 ---
 
-# 🚧 Milestone 5 — GPU Particle Systems
+# 🚧 Milestone 5 — GPU Particle Systems & Physics Foundation
 
 **Current Development Focus**
 
 Objectives:
 
 ### Particle Emission
-
-- Continuous high-rate spawning
-- Frame-rate independent emission
-- Burst emitters
-- Spawn accumulation
+- ✅ Continuous high-rate spawning with sub-frame spatial interpolation (anti-clustering) [Verified in automated tests; Manually Verified in GUI; CPU SpawnSystem → SSBO upload]
+- ✅ Frame-rate independent spawn accumulation [Verified in automated tests; Manually Verified in GUI]
+- Burst emitters [Planned]
+- Multi-shape emitters (disc, line, cone) [Planned]
+- GPU-native compute emitter kernels [Planned]
 
 ### Particle Initialization
+- Velocity distributions and randomization [Planned]
+- Initial orientation and angular velocity [Planned]
+- Initial size and mass distributions [Planned]
+- Initial lifetime parameters [Planned]
 
-- Velocity distributions
-- Randomization
-- Spawn shapes
-- Initial rotation
-- Initial size
-- Initial lifetime
+### Simulation & Lifecycle
+- In-place GPU dead particle compaction and capacity reclamation (resolving CPU-side capacity retention of inactive particles) [Planned]
+- GPU timer query telemetry (replacing unmetered GPU time display) [Planned]
+- Improved lifecycle management (color and size over lifetime) [Planned]
+- Higher particle capacities and GPU memory optimization [Planned]
+- GPU/CPU validation parity suite [Planned]
 
-### Simulation
+### Scientific Physics Visualization
+- Trajectory path ribbons and streamlines [Planned]
+- Dynamic force vector fields (gravity, drag, electric) [Planned]
+- Velocity and kinetic energy heatmaps [Planned]
+- Phase space and energy conservation diagnostic plots [Planned]
 
-- Improved lifecycle management
-- Better GPU/CPU parity
-- Compute shader optimization
-- Higher particle counts
-
-### Rendering
-
-- Better particle appearance
-- Color over lifetime
-- Size over lifetime
-- Additional rendering modes
-
-This milestone transforms the current simulation into a fully featured GPU-native particle system.
+This milestone establishes the computational particle foundation required for interactive physics visualization, experimentation, and eventual physics-problem solving.
 
 ---
 

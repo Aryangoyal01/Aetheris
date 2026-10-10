@@ -10,48 +10,49 @@
 
 Aetheris is **not** a game engine.
 
-It is a professional simulation platform designed for building, exploring, and interacting with large-scale real-time simulations inside a unified mathematical workspace.
+Aetheris is a **GPU-native scientific simulation platform focused on visualising physics, interactive experimentation, and eventual physics-problem solving**.
 
-The project aims to combine modern GPU computing, advanced visualization, intelligent tooling, and natural interaction into a single coherent environment.
+The current professional desktop editor and particle simulation engine serve as the foundation, not the final purpose. The long-term mission is to enable students, researchers, and engineers to interactively construct, simulate, observe, and solve complex physical phenomena in real time.
 
 ---
 
 # Core Vision
 
-The engine is centered around a **shared two-dimensional Cartesian world**.
+The platform is centered around an interactive, **two-dimensional Cartesian mathematical workspace**.
 
-Every subsystem—whether rendering, physics, AI, or future interaction methods—operates within this common world model.
+Every subsystem—whether GPU simulation, multi-body physics, visualization, console tooling, or future AI problem-solving assistance—operates within this shared world model.
 
-Rather than existing as isolated features, all systems should integrate through a consistent architecture and a shared source of truth.
+Users can interactively configure initial conditions, apply physical laws, perturb running systems, inspect numerical telemetry, and visualize analytical solutions alongside numerical simulations.
 
 ---
 
 # Design Philosophy
 
-Aetheris should feel like professional engineering and scientific software rather than a traditional game engine.
+Aetheris should feel like professional engineering and scientific software rather than a game development tool.
 
-The editor should emphasize:
+The platform emphasizes:
 
 * Clarity
-* Precision
-* Performance
+* Mathematical Precision (exact continuous simulation and sub-frame sampling without discrete spatial artifacts)
+* Performance (GPU-accelerated compute pipelines)
 * Stability
 * Extensibility
 
-Every feature should contribute to a focused, productive workflow instead of unnecessary complexity.
+Every feature must contribute to physics exploration and problem solving rather than superficial visual complexity.
 
 ---
 
 # Long-Term Goals
 
-The completed platform should combine:
+The completed platform combines:
 
-* GPU-native simulation
-* Professional editor tooling
-* AI-assisted workflows
-* High-performance visualization
-* Natural interaction
-* Extensible architecture
+* GPU-native physical simulation
+* Scientific physics visualization (vector fields, trajectories, energy spectra)
+* Interactive experimentation and parameter perturbation
+* Physics problem-solving tooling (analytical validation, boundary solvers)
+* Professional desktop engineering editor
+* AI-assisted problem modeling and reasoning
+* Extensible scientific operator architecture
 
 These capabilities should work together seamlessly rather than as independent modules.
 

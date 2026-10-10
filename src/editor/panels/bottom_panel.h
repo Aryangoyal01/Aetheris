@@ -13,4 +13,7 @@ public:
 private:
     std::string m_name = "Console";
     EditorState* m_state;
+    char m_inputBuf[256] = "";
+    bool m_autoScroll = true;
+    size_t m_lastLogCount = 0;
 };

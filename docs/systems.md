@@ -89,18 +89,23 @@ Future additions:
 
 # Spawn System
 
-The Spawn System converts editor input into particle creation.
+The Spawn System converts editor and user input into particle creation.
 
 Responsibilities:
 
-- Spawn requests
-- Spawn timing
-- Continuous emission
-- Burst emission
-- Spawn shapes
-- Initial particle properties
+- Spawn requests and parameter encapsulation
+- Frame-rate independent spawn timing via accumulator [Verified in automated tests; Manually Verified in GUI]
+- Continuous emission with sub-frame spatial interpolation (eliminating cursor-speed aliasing and spatial clustering) [Verified in automated tests; Manually Verified in GUI]
+- Hold delay boundary tracking with exact fractional sub-frame start positioning
+- Input sanitization (guarding non-positive/non-finite spawn rates, delta time spikes, and capacity saturation)
+- Initial particle attributes (position, velocity, radius, color, lifetime)
 
-The Spawn System initializes particles only.
+**Execution Architecture:**
+The Spawn System initializes particles on the CPU inside `World::ParticleSystem`. During continuous drag emission, fractional delta time is accumulated and particle coordinates are linearly interpolated along the cursor movement segment $[P_{\text{prev}}, P_{\text{curr}}]$ using the normalized emission timestamp. Newly created particles are subsequently uploaded to the GPU via `GPUParticleBuffer::Upload` to populate the SSBO. It is not yet a GPU-native compute emitter kernel.
+
+**Known Limitations:**
+- **CPU-Bound Capacity Retention:** When particles reach end-of-life on the GPU, the compute shader sets `isActive = 0`. However, CPU-side `World::ParticleSystem` capacity is not automatically recycled until synchronization (`sync`) or reset (`clear particles`). GPU-inactive particles continue occupying CPU particle slots until compacted.
+- **Delta Time Clamping:** Frame delta time is intentionally clamped to 100 ms (`MAX_DELTA_TIME = 0.10f`), which intentionally limits catch-up particle burst emissions after large frame stalls or window dragging hitches rather than guaranteeing frame-rate-independent catch-up under arbitrary stalls.
 
 Simulation is handled exclusively by the Simulation System.
 
@@ -120,7 +125,6 @@ Current features:
 
 Planned additions:
 
-- Continuous high-rate emission
 - Force fields
 - Springs
 - Attractors
@@ -183,7 +187,19 @@ Current components:
 - Toolbar
 - Viewport
 - Inspector
-- Console
+- Developer Console [Verified in automated test harness; Manually Verified in GUI]:
+  - Live log stream synchronized with the centralized `Log` subsystem
+  - Severity filtering and color-coded badges (`INFO`, `WARN`, `ERROR`, `SYSTEM`)
+  - Auto-scrolling to recent events with manual scroll history
+  - Interactive command line supporting:
+    - `help`: Lists all supported console commands.
+    - `clear`: Clears the console log view.
+    - `clear particles`: Requests particle system reset via `EditorState::clearParticlesRequested`.
+    - `gravity <x> <y>`: Validates finite floating-point values and updates simulation gravity.
+    - `pause` / `play`: Toggles simulation execution state via `SimulationSettings::state`.
+    - `sync`: Triggers SSBO readback to CPU particle structures via `EditorState::syncRequested`.
+    - `stats`: Prints real-time FPS, frame time (ms), GPU time (`N/A (unmetered)` — no GPU timer query exists), and active particle count.
+    - `reset`: Alias for clearing all active simulation particles.
 - Status Bar
 - Quick Actions
 
