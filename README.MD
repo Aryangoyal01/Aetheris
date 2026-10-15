@@ -45,6 +45,38 @@ Unlike traditional game engines, Aetheris is designed for **interactive simulati
 
 ---
 
+## Build from Source (Windows)
+
+**Prerequisites:** Git, CMake, and MSYS2 UCRT64 with GCC and Ninja.
+
+Install GCC and Ninja in the MSYS2 UCRT64 terminal:
+
+```bash
+pacman -S --needed mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-ninja
+```
+
+Open PowerShell in the project root and configure:
+
+```powershell
+cmake -S . -B build -G Ninja `
+  -DCMAKE_C_COMPILER="C:/msys64/ucrt64/bin/gcc.exe" `
+  -DCMAKE_CXX_COMPILER="C:/msys64/ucrt64/bin/g++.exe" `
+  -DCMAKE_BUILD_TYPE=Debug `
+  -DCMAKE_EXPORT_COMPILE_COMMANDS=ON `
+  "-DCMAKE_POLICY_VERSION_MINIMUM=3.10"
+```
+
+Build and run:
+
+```powershell
+cmake --build build --parallel 8
+.\build\Aetheris.exe
+```
+
+CMake downloads Raylib automatically during configuration. No Visual Studio installation is required for this toolchain.
+
+---
+
 ## Project Status
 
 Current milestone:
